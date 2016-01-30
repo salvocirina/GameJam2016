@@ -10,6 +10,9 @@ public class TankMissile : MonoBehaviour {
 	public float destroyTime = 5.0f;
 	float beginningTime;
 
+	GameObject gameController;
+	GameController controllerScript;
+
 	// Use this for initialization
 	void Start () {
 		objRigidbody = GetComponent<Rigidbody>();
@@ -17,6 +20,10 @@ public class TankMissile : MonoBehaviour {
 			objRigidbody.AddForce(transform.forward * speed);
 
 		beginningTime = Time.time;
+
+		gameController = GameObject.FindGameObjectWithTag("GameController");
+		if (gameController != null)
+			controllerScript = gameController.GetComponent<GameController>();
 	}
 
 	void Update()
@@ -36,6 +43,22 @@ public class TankMissile : MonoBehaviour {
 	}
 
 	void AutoDestroy()
+	{
+		Destroy(this.gameObject);
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "Player")
+		{
+			if (controllerScript != null)
+				controllerScript.TakeHit(GameController.HitType.Weak);
+
+			Explode();
+		}
+	}
+
+	void Explode()
 	{
 		Destroy(this.gameObject);
 	}

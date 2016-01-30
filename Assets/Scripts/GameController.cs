@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour {
 	
 	}
 
-	void TakeHit(HitType type)
+	public void TakeHit(HitType type)
 	{
 		if (type == HitType.Weak)
 		{
