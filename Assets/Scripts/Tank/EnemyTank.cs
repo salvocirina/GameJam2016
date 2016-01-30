@@ -54,6 +54,19 @@ public class EnemyTank : MonoBehaviour {
 				arrived = true;
 		}
 
+//		RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.position - player.transform.position);
+//		for (int i = 0; i < hits.Length; i++)
+//		{
+//			Debug.Log (hits[i].transform.gameObject.name);
+//		}
+
+		//Ray ray = new Ray(transform.position, transform.position - player.transform.position);
+		Ray ray = new Ray(point.transform.position, -cannon.transform.forward);
+		RaycastHit hit;
+		if (Physics.Raycast (ray, out hit)) {	
+			Debug.Log (hit.transform.gameObject.name);
+		}
+
 		if (((Time.time - lastShoot) > shootingRate) && PlayerInSight() && PlayerNearEvaluation())
 		{
 			lastShoot = Time.time;
