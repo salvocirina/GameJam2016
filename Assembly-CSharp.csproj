@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Helicopter\Helicopter.cs" />
      <Compile Include="Assets\Scripts\Helicopter\HelicopterSpawner.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
+     <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\Tank\EnemyTank.cs" />
      <Compile Include="Assets\Scripts\Tank\TankCreator.cs" />
      <Compile Include="Assets\Scripts\Tank\TankCreatorGroup.cs" />
