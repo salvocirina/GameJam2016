@@ -167,6 +167,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &132452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 431492}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &137552
 GameObject:
   m_ObjectHideFlags: 1
@@ -489,6 +504,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 408442}
   m_RootOrder: 1
+--- !u!4 &431492
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.938324, y: -7.12943649, z: 4.27485752}
+  m_LocalScale: {x: .0500000007, y: .0500000007, z: .0500000007}
+  m_Children: []
+  m_Father: {fileID: 463618}
+  m_RootOrder: 8
 --- !u!4 &434422
 Transform:
   m_ObjectHideFlags: 1
@@ -585,6 +612,7 @@ Transform:
   - {fileID: 427736}
   - {fileID: 445044}
   - {fileID: 438248}
+  - {fileID: 431492}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &464716
@@ -777,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 448462}
   endingPosition: {fileID: 430568}
 --- !u!114 &11422182
@@ -791,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 421858}
   endingPosition: {fileID: 416562}
 --- !u!114 &11424126
@@ -805,7 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 498014}
   endingPosition: {fileID: 441936}
 --- !u!114 &11428118
@@ -819,7 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 464716}
   endingPosition: {fileID: 475082}
 --- !u!114 &11442826
@@ -833,7 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 477258}
   endingPosition: {fileID: 434422}
 --- !u!114 &11444438
@@ -847,7 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 480854}
   endingPosition: {fileID: 493018}
 --- !u!114 &11447842
@@ -861,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 407596}
   endingPosition: {fileID: 412900}
 --- !u!114 &11468314
@@ -875,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 494852}
   endingPosition: {fileID: 492348}
 --- !u!1001 &100100000
@@ -884,7 +912,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: helicopterPrefab
+      value: 
+      objectReference: {fileID: 159078, guid: 40be0023f733d8444a9589877223c624, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tankPrefab
+      value: 
+      objectReference: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188022}

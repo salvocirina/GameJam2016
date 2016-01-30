@@ -133,9 +133,11 @@ MonoBehaviour:
   moveSpeed: 40
   rotationSpeed: 50
   missilePrefab: {fileID: 196334, guid: bacad3fe64156f84f9ef7f72bc536f6c, type: 2}
-  point: {fileID: 147298}
+  point:
+  - {fileID: 0}
   shootingRate: .200000003
   startRotationTime: 0
+  life: 2
   helicopterHeight: 30
 --- !u!1001 &100100000
 Prefab:
@@ -163,6 +165,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: helicopterHeight
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

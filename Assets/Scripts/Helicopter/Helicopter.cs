@@ -37,9 +37,10 @@ public class Helicopter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Vector3 objPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
 		if (!distanceReached)
 		{
-			Vector3 objPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+
 //			if (Vector3.Distance(transform.position, objPosition) > distance)
 //			{
 				transform.position = Vector3.MoveTowards(transform.position, objPosition, Time.deltaTime*moveSpeed);
@@ -57,7 +58,9 @@ public class Helicopter : MonoBehaviour {
 			if ((Time.time - startTime) > startRotationTime)
 				transform.RotateAround(player.transform.position, Vector3.up, Time.deltaTime * rotationSpeed);
 
-			transform.position = new Vector3(
+			if (Vector3.Distance(transform.position, objPosition) > distance)
+				distanceReached = false;
+
 
 //			transform.SetParent(player.transform);
 

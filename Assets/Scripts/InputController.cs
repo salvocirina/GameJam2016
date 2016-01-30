@@ -128,12 +128,12 @@ public class InputController : MonoBehaviour {
 
 		if(GetAxis(3,"Shoot") > 0.1f) {
 			if(((Time.time - lastRocketShoot) > rocketShootingRate)) {
-				lastGatlinShoot = Time.time;
+				lastRocketShoot = Time.time;
 				RocketShoot();
 			}
 		} else if(GetAxis(3,"ShootIper") > 0.1f) {
 			if(((Time.time - lastRocketShoot) > improvedrocketShootingRate)) {
-				lastGatlinShoot = Time.time;
+				lastRocketShoot = Time.time;
 				IperRocketShoot();
 			}
 		}
@@ -241,14 +241,14 @@ public class InputController : MonoBehaviour {
 		GameObject leftBullet = Instantiate (bulletPrefab , gatlinLeftSpawnPoint[0].position , gatlinLeftSpawnPoint[0].transform.rotation) as GameObject;
 		Rigidbody bulletLeftRb = leftBullet.GetComponent<Rigidbody>();
 
-		bulletLeftRb.AddForce(leftBullet.transform.forward * gatlinShootForce);
+		bulletLeftRb.AddForce(leftBullet.transform.up * gatlinShootForce);
 
 		Destroy(leftBullet , 3.0f);
 
 		GameObject rightBullet = Instantiate (bulletPrefab , gatlinRightSpawnPoint[0].position , gatlinRightSpawnPoint[0].transform.rotation) as GameObject;
 		Rigidbody bulletRightRb = rightBullet.GetComponent<Rigidbody>();
 		
-		bulletRightRb.AddForce(rightBullet.transform.forward * gatlinShootForce);
+		bulletRightRb.AddForce(rightBullet.transform.up * gatlinShootForce);
 		
 		Destroy(rightBullet , 3.0f);
 
@@ -262,7 +262,7 @@ public class InputController : MonoBehaviour {
 			GameObject leftBullet = Instantiate (bulletPrefab , gatlinLeftSpawnPoint[i].position , gatlinLeftSpawnPoint[i].transform.rotation) as GameObject;
 			Rigidbody bulletLeftRb = leftBullet.GetComponent<Rigidbody>();
 			
-			bulletLeftRb.AddForce(leftBullet.transform.forward * gatlinShootForce);
+			bulletLeftRb.AddForce(leftBullet.transform.up * gatlinShootForce);
 			
 			Destroy(leftBullet , 3.0f);
 
@@ -274,7 +274,7 @@ public class InputController : MonoBehaviour {
 			GameObject rightBullet = Instantiate (bulletPrefab , gatlinRightSpawnPoint[i].position , gatlinRightSpawnPoint[i].transform.rotation) as GameObject;
 			Rigidbody bulletRightRb = rightBullet.GetComponent<Rigidbody>();
 			
-			bulletRightRb.AddForce(rightBullet.transform.forward * gatlinShootForce);
+			bulletRightRb.AddForce(rightBullet.transform.up * gatlinShootForce);
 			
 			Destroy(rightBullet , 3.0f);
 		}
