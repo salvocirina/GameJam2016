@@ -12,9 +12,9 @@ GameObject:
   - 136: {fileID: 13628816}
   - 23: {fileID: 2365262}
   - 54: {fileID: 5454402}
-  - 114: {fileID: 11445576}
+  - 114: {fileID: 11469040}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: PlayerMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11445576
+--- !u!114 &11469040
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,9 +86,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 171884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29733b5879fa7b94fabcb11d3df466fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 4916c9395b8de464da319f2c4cd19acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dustParticlesPrefab: {fileID: 179844, guid: 694346c57da1afe4bbe75d626a3d912a, type: 2}
+  radius: 50
+  helicopterHeight: 6
+  helicopterPrefab: {fileID: 156716, guid: 487a89dbedd6a9e42af28ae9bc559722, type: 2}
 --- !u!136 &13628816
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -112,6 +116,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: helicopterPrefab
+      value: 
+      objectReference: {fileID: 156716, guid: 487a89dbedd6a9e42af28ae9bc559722, type: 2}
+    - target: {fileID: 0}
+      propertyPath: dustParticlesPrefab
+      value: 
+      objectReference: {fileID: 179844, guid: 694346c57da1afe4bbe75d626a3d912a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: radius
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
