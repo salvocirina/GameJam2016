@@ -14,8 +14,12 @@ public class PlayerMissile : MonoBehaviour {
 
 	public GameObject helicopterPrefab;
 
+	GameObject player;
+
 	void Start()
 	{
+		player = GameObject.FindGameObjectWithTag("Player");
+
 		if (helicopterPrefab != null)
 		{
 			Helicopter heli = helicopterPrefab.GetComponent<Helicopter>();
@@ -34,8 +38,12 @@ public class PlayerMissile : MonoBehaviour {
 
 	void Update()
 	{
-		if (transform.position.y > helicopterHeight)
-			transform.position = new Vector3(transform.position.x, helicopterHeight, transform.position.z);
+		if (player != null)
+		{
+			if (transform.position.y > player.transform.position.y + helicopterHeight)
+				transform.position = new Vector3(transform.position.x, player.transform.position.y + helicopterHeight, transform.position.z);
+		}
+
 	}
 
 	void Explode()

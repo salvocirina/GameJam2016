@@ -47,13 +47,19 @@ public class TankMissile : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.tag == "Player")
 		{
 			if (controllerScript != null)
 				controllerScript.TakeHit(GameController.HitType.Weak);
 
+			Explode();
+		}
+
+		if (other.gameObject.tag == "Shield")
+		{
+			Debug.Log ("shield");
 			Explode();
 		}
 	}
