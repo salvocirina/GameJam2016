@@ -22,6 +22,11 @@ public class EnemyTank : MonoBehaviour {
 
 	float lastShoot = 0;
 
+	bool playerNear = false;
+	public float playerDistanceToShoot = 6.0f;
+
+
+
 	// Use this for initialization
 	void Start () {
 //		if (startingPoint != null)
@@ -49,7 +54,7 @@ public class EnemyTank : MonoBehaviour {
 				arrived = true;
 		}
 
-		if (((Time.time - lastShoot) > shootingRate) && PlayerInSight())
+		if (((Time.time - lastShoot) > shootingRate) && PlayerInSight() && PlayerNearEvaluation())
 		{
 			lastShoot = Time.time;
 			Shoot();
@@ -77,9 +82,6 @@ public class EnemyTank : MonoBehaviour {
 		if (missilePrefab != null && point != null)
 		{
 			GameObject missile = (GameObject) Instantiate(missilePrefab, point.transform.position, point.transform.rotation) as GameObject;
-//			missile.transform.position = point.transform.position;
-//
-//			missile.GetComponent<TankMissile>().SetForwardDirection(point.transform.forward);
 		}
 	}
 
@@ -87,5 +89,16 @@ public class EnemyTank : MonoBehaviour {
 	bool PlayerInSight()
 	{
 		return true;
+	}
+
+	bool PlayerNearEvaluation()
+	{
+		//Debug.Log (Vector3.Distance(transform.position, player.transform.position));
+
+		if ((Vector3.Distance(transform.position, player.transform.position) < playerDistanceToShoot))
+		    return true;
+		else
+			return false;
+
 	}
 }
