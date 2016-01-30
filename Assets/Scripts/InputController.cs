@@ -276,7 +276,7 @@ public class InputController : MonoBehaviour {
 		if (targetDir.sqrMagnitude > 0.21f) {
 			// rotation of the ship
 			var rotation= Quaternion.LookRotation(targetDir, Vector3.up);
-			transform.GetChild(0).GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).GetChild(0).rotation, rotation, Time.deltaTime * rotShieldSpeed);
+			transform.GetChild(2).rotation = Quaternion.Slerp(transform.GetChild(2).rotation, rotation, Time.deltaTime * rotShieldSpeed);
 		}
 
 	}
