@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour {
 
 	public float movSpeed = 25.0f;
 	public float rotSpeed = 15.0f;
+	public float rotShieldSpeed = 35.0f;
 
 	public float gatlinShootForce = 15.0f;
 
@@ -76,8 +77,8 @@ public class InputController : MonoBehaviour {
 			}
 		}
 
-		float shieldH = Input.GetAxis(horizontalAimAxis) * rotSpeed;
-		float shieldV = Input.GetAxis(veritcalAimAxis) * rotSpeed;
+		float shieldH = Input.GetAxis(horizontalShieldAxis);// * rotShieldSpeed;
+		float shieldV = Input.GetAxis(veritcalShieldAxis);// * rotShieldSpeed;
 		Shield(shieldH, shieldV);
 
 	}
@@ -112,9 +113,17 @@ public class InputController : MonoBehaviour {
 
 	void Shield(float xAxis , float zAxis) {
 
-		Vector3 targetDir = new Vector3(xAxis , 0 , zAxis);
-		Vector3 newDir = Vector3.RotateTowards(transform.GetChild(0).forward, targetDir , Time.deltaTime , 0.0f);
-		transform.GetChild(0).rotation = 	Quaternion.LookRotation(newDir);
+//		Vector3 targetDir = new Vector3(xAxis , 0 , zAxis);
+//		Vector3 newDir = Vector3.RotateTowards(transform.GetChild(1).forward, targetDir , Time.deltaTime , 0.0f);
+//		transform.GetChild(1).rotation = 	Quaternion.LookRotation(newDir);
+//		transform.GetChild(1).forward = Vector3.Normalize(new Vector3(xAxis, 0f, zAxis));
+		if(zAxis < 0.1f && xAxis < 0.1 && zAxis > -0.1 && xAxis > -0.1) 
+			return;
+
+		float tetha = Mathf.Atan2(zAxis,xAxis);
+		Debug.Log(tetha);
+		transform.GetChild(1).eulerAngles = new Vector3(0 , -tetha *rotShieldSpeed, 0 );
+
 	}
 
 }
