@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Tank\TankCreatorGroup.cs" />
      <Compile Include="Assets\Scripts\Tank\TankMissile.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
+     <None Include="Assets\ShaderAndMaterial\TestToon.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

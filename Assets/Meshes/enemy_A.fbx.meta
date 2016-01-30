@@ -1,15 +1,31 @@
 fileFormatVersion: 2
-guid: ed0a96ca45c88974c85395916b2621c5
-timeCreated: 1454127564
-licenseType: Free
+guid: 8c132fb0dcb929e4ea2eff20cadb8788
+timeCreated: 1454137545
+licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: enemy_A
+    100004: polySurface5
+    100006: polySurface6
+    100008: polySurface7
+    100010: polySurface8
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: rocks_A
+    400002: enemy_A
+    400004: polySurface5
+    400006: polySurface6
+    400008: polySurface7
+    400010: polySurface8
+    2300000: polySurface5
+    2300002: polySurface7
+    2300004: polySurface8
+    3300000: polySurface5
+    3300002: polySurface7
+    3300004: polySurface8
+    4300000: polySurface7
+    4300002: polySurface8
+    4300004: polySurface5
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -53,7 +69,7 @@ ModelImporter:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

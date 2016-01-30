@@ -6,6 +6,7 @@ public class InputController : MonoBehaviour {
 	private Rigidbody rb;
 
 	public float movSpeed = 25.0f;
+	public float runSpeed = 25.0f;
 	public float rotSpeed = 15.0f;
 	public float rotShieldSpeed = 35.0f;
 	public float rotRocketSpeed = 35.0f;
@@ -76,7 +77,7 @@ public class InputController : MonoBehaviour {
 		float aimGatlinH = Input.GetAxis(horizontalAimGatlinAxis) * rotSpeed;
 //		float aimGatlinV = Input.GetAxis(veritcalAimGatlinAxis) * rotSpeed;
 		RotateGatlinGun(aimGatlinH);
-		if(Input.GetButton("GatlinFire")) {
+		if(Input.GetAxis("GatlinFire") > 0.1f) {
 			if(((Time.time - lastShoot) > gatlingShootingRate)) {
 				lastShoot = Time.time;
 				GatlinShoot();
@@ -91,7 +92,7 @@ public class InputController : MonoBehaviour {
 		float rocketV = Input.GetAxis(veritcalRocketAxis) * rotRocketSpeed;
 		RocketsAim(rocketH, rocketV);
 
-		if(Input.GetButton("RocketFire") ) {
+		if(Input.GetAxis("RocketFire") > 0.1f) {
 			if(((Time.time - lastShoot) > gatlingShootingRate)) {
 				lastShoot = Time.time;
 				RocketShoot();
@@ -114,6 +115,7 @@ public class InputController : MonoBehaviour {
 	void Move(float xAxis , float zAxis) {
 		rb.velocity = new Vector3(xAxis , 0 , zAxis);
 	}
+
 
 	void RotateGatlinGun(float yAxis ) {
 

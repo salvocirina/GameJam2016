@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: mat_skin05
-  m_Shader: {fileID: 4800000, guid: f5cca88abd9534f4295e311b576afc98, type: 3}
-  m_ShaderKeywords: 
+  m_Name: ToonMat
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2000
   stringTagMap: {}
@@ -78,6 +78,20 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ToonShade
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -90,7 +104,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: .519999981
       data:
         first:
           name: _Parallax
@@ -102,7 +116,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: .792999983
       data:
         first:
           name: _BumpScale
@@ -126,7 +140,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0
+        second: .458000004
       data:
         first:
           name: _EmissionScaleUI
@@ -134,7 +148,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00499999989
+        second: .00520000001
     m_Colors:
       data:
         first:
@@ -143,7 +157,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .548164248, g: .751999974, b: .261695981, a: 1}
+        second: {r: .79411763, g: .572231829, b: .572231829, a: 1}
       data:
         first:
           name: _EmissionColorUI
