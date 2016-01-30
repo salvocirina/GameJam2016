@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: fdb4fabbfc355ca44b03fead0a8928e7
+timeCreated: 1454169526
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: mech_1
+    100004: mech_arm_L
+    100006: mech_arm_R
+    100008: mech_base_cannon_L
+    100010: mech_base_cannon_R
+    100012: mech_body
+    100014: mech_cannon_L
+    100016: mech_cannon_R
+    100018: mech_finger_L_01
+    100020: mech_finger_L_02
+    100022: mech_finger_L_03
+    100024: mech_finger_R_01
+    100026: mech_finger_R_02
+    100028: mech_finger_R_03
+    100030: mech_foot_L
+    100032: mech_foot_R
+    100034: mech_forearm_L
+    100036: mech_forearm_R
+    100038: mech_gun_L
+    100040: mech_gun_R
+    100042: mech_knee_L
+    100044: mech_knee_R
+    100046: mech_leg_L
+    100048: mech_leg_R
+    100050: mech_sholder_L
+    100052: mech_shoulder_R
+    400000: //RootNode
+    400002: mech_1
+    400004: mech_arm_L
+    400006: mech_arm_R
+    400008: mech_base_cannon_L
+    400010: mech_base_cannon_R
+    400012: mech_body
+    400014: mech_cannon_L
+    400016: mech_cannon_R
+    400018: mech_finger_L_01
+    400020: mech_finger_L_02
+    400022: mech_finger_L_03
+    400024: mech_finger_R_01
+    400026: mech_finger_R_02
+    400028: mech_finger_R_03
+    400030: mech_foot_L
+    400032: mech_foot_R
+    400034: mech_forearm_L
+    400036: mech_forearm_R
+    400038: mech_gun_L
+    400040: mech_gun_R
+    400042: mech_knee_L
+    400044: mech_knee_R
+    400046: mech_leg_L
+    400048: mech_leg_R
+    400050: mech_sholder_L
+    400052: mech_shoulder_R
+    2300000: //RootNode
+    2300002: mech_1
+    2300004: mech_arm_L
+    2300006: mech_arm_R
+    2300008: mech_base_cannon_L
+    2300010: mech_base_cannon_R
+    2300012: mech_body
+    2300014: mech_cannon_L
+    2300016: mech_cannon_R
+    2300018: mech_finger_L_01
+    2300020: mech_finger_L_02
+    2300022: mech_finger_L_03
+    2300024: mech_finger_R_01
+    2300026: mech_finger_R_02
+    2300028: mech_finger_R_03
+    2300030: mech_foot_L
+    2300032: mech_foot_R
+    2300034: mech_forearm_L
+    2300036: mech_forearm_R
+    2300038: mech_gun_L
+    2300040: mech_gun_R
+    2300042: mech_knee_L
+    2300044: mech_knee_R
+    2300046: mech_leg_L
+    2300048: mech_leg_R
+    2300050: mech_sholder_L
+    2300052: mech_shoulder_R
+    3300000: //RootNode
+    3300002: mech_1
+    3300004: mech_arm_L
+    3300006: mech_arm_R
+    3300008: mech_base_cannon_L
+    3300010: mech_base_cannon_R
+    3300012: mech_body
+    3300014: mech_cannon_L
+    3300016: mech_cannon_R
+    3300018: mech_finger_L_01
+    3300020: mech_finger_L_02
+    3300022: mech_finger_L_03
+    3300024: mech_finger_R_01
+    3300026: mech_finger_R_02
+    3300028: mech_finger_R_03
+    3300030: mech_foot_L
+    3300032: mech_foot_R
+    3300034: mech_forearm_L
+    3300036: mech_forearm_R
+    3300038: mech_gun_L
+    3300040: mech_gun_R
+    3300042: mech_knee_L
+    3300044: mech_knee_R
+    3300046: mech_leg_L
+    3300048: mech_leg_R
+    3300050: mech_sholder_L
+    3300052: mech_shoulder_R
+    4300000: Mech_TEST
+    4300002: mech_finger_L_03
+    4300004: mech_finger_L_01
+    4300006: mech_base_cannon_L
+    4300008: mech_cannon_L
+    4300010: mech_sholder_L
+    4300012: mech_finger_L_02
+    4300014: mech_foot_L
+    4300016: mech_base_cannon_R
+    4300018: mech_cannon_R
+    4300020: mech_foot_R
+    4300022: mech_shoulder_R
+    4300024: mech_body
+    4300026: mech_gun_L
+    4300028: mech_gun_R
+    4300030: mech_forearm_L
+    4300032: mech_arm_L
+    4300034: mech_forearm_R
+    4300036: mech_arm_R
+    4300038: mech_1
+    4300040: mech_leg_R
+    4300042: mech_knee_R
+    4300044: mech_leg_L
+    4300046: mech_knee_L
+    4300048: mech_finger_R_03
+    4300050: mech_finger_R_02
+    4300052: mech_finger_R_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

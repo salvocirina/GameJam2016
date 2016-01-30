@@ -36,7 +36,7 @@ public class TankCreator : MonoBehaviour {
 	{
 		if (tankPrefab != null)
 		{
-			GameObject tank = (GameObject) Instantiate(tankPrefab, startingPosition.transform.position, Quaternion.identity) as GameObject;
+			GameObject tank = (GameObject) Instantiate(tankPrefab, startingPosition.transform.position, tankPrefab.transform.rotation) as GameObject;
 			tank.GetComponent<EnemyTank>().SetEndingPosition(endingPosition.transform.position);
 		}
 	}
