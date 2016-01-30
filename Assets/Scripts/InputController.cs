@@ -7,6 +7,8 @@ public class InputController : MonoBehaviour {
 
 	public float movSpeed = 25.0f;
 	public float rotSpeed = 15.0f;
+	public float rotShieldSpeed = 35.0f;
+	public float rotRocketSpeed = 35.0f;
 
 	public float gatlinShootForce = 15.0f;
 
@@ -26,12 +28,15 @@ public class InputController : MonoBehaviour {
 	public string horizontalShieldAxis;
 	public string veritcalShieldAxis;
 
-
+	public string horizontalRocketAxis;
+	public string veritcalRocketAxis;
 
 	public string horizontalAimGatlinAxis;
 
 	public GameObject bulletPrefab;
-	public Transform spawnPoint;
+	public Transform gatlinLeftSpawnPoint;
+	public Transform gatlinRightSpawnPoint;
+	public Transform rocketSpawnPoint;
 //	public string veritcalAimGatlinAxis;
 
 	void Awake() {
@@ -49,6 +54,9 @@ public class InputController : MonoBehaviour {
 
 		horizontalShieldAxis += gameObject.transform.GetChild(1).name;
 		veritcalShieldAxis += gameObject.transform.GetChild(1).name;
+
+		horizontalRocketAxis += gameObject.transform.GetChild(2).name;
+		veritcalRocketAxis += gameObject.transform.GetChild(2).name;
 
 		horizontalAimGatlinAxis += gameObject.transform.GetChild(0).GetChild(0).name;
 //		veritcalAimGatlinAxis += gameObject.transform.GetChild(0).GetChild(0).name;
@@ -76,16 +84,32 @@ public class InputController : MonoBehaviour {
 			}
 		}
 
-		float shieldH = Input.GetAxis(horizontalAimAxis) * rotSpeed;
-		float shieldV = Input.GetAxis(veritcalAimAxis) * rotSpeed;
+		float shieldH = Input.GetAxis(horizontalShieldAxis) * rotShieldSpeed;
+		float shieldV = Input.GetAxis(veritcalShieldAxis) * rotShieldSpeed;
 		Shield(shieldH, shieldV);
+
+		float rocketH = Input.GetAxis(horizontalRocketAxis) * rotRocketSpeed;
+		float rocketV = Input.GetAxis(veritcalRocketAxis) * rotRocketSpeed;
+		RocketsAim(rocketH, rocketV);
+
+		if(Input.GetAxis("RocketFire") > 0.1f) {
+			if(((Time.time - lastShoot) > gatlingShootingRate)) {
+				lastShoot = Time.time;
+				RocketShoot();
+			}
+		}
 
 	}
 
 	void Aim(float xAxis , float zAxis) {
 		Vector3 targetDir = new Vector3(xAxis , 0 , zAxis);
-		Vector3 newDir = Vector3.RotateTowards(transform.GetChild(0).forward, targetDir , Time.deltaTime , 0.0f);
-		transform.GetChild(0).rotation = 	Quaternion.LookRotation(newDir);
+		
+		if (targetDir.sqrMagnitude > 0.21f) {
+			// rotation of the ship
+			var rotation= Quaternion.LookRotation(targetDir, Vector3.up);
+			transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, rotation, Time.deltaTime * rotShieldSpeed);
+
+		}
 	}
 
 	void Move(float xAxis , float zAxis) {
@@ -95,26 +119,61 @@ public class InputController : MonoBehaviour {
 	void RotateGatlinGun(float yAxis ) {
 
 		transform.GetChild(0).GetChild(0).localEulerAngles = new Vector3(0, yAxis, 0);
+		transform.GetChild(0).GetChild(1).localEulerAngles = new Vector3(0, yAxis , 0);
 		yAxis = Mathf.Clamp(yAxis, -minClampGatlin, maxClampGatlin);
 
 	}
 
 	void GatlinShoot() {
 
-		GameObject bullet = Instantiate (bulletPrefab , spawnPoint.position , spawnPoint.transform.rotation) as GameObject;
-		Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+		GameObject leftBullet = Instantiate (bulletPrefab , gatlinLeftSpawnPoint.position , gatlinLeftSpawnPoint.transform.rotation) as GameObject;
+		Rigidbody bulletLeftRb = leftBullet.GetComponent<Rigidbody>();
 
-		bulletRb.AddForce(bullet.transform.up * gatlinShootForce);
+		bulletLeftRb.AddForce(leftBullet.transform.up * gatlinShootForce);
 
-		Destroy(bullet , 5.0f);
+		Destroy(leftBullet , 3.0f);
+
+		GameObject rightBullet = Instantiate (bulletPrefab , gatlinRightSpawnPoint.position , gatlinRightSpawnPoint.transform.rotation) as GameObject;
+		Rigidbody bulletRightRb = rightBullet.GetComponent<Rigidbody>();
+		
+		bulletRightRb.AddForce(rightBullet.transform.up * gatlinShootForce);
+		
+		Destroy(rightBullet , 3.0f);
 	
 	}
 
 	void Shield(float xAxis , float zAxis) {
 
 		Vector3 targetDir = new Vector3(xAxis , 0 , zAxis);
-		Vector3 newDir = Vector3.RotateTowards(transform.GetChild(0).forward, targetDir , Time.deltaTime , 0.0f);
-		transform.GetChild(0).rotation = 	Quaternion.LookRotation(newDir);
+
+		if (targetDir.sqrMagnitude > 0.21f) {
+			// rotation of the ship
+			var rotation= Quaternion.LookRotation(targetDir, Vector3.up);
+			transform.GetChild(1).rotation = Quaternion.Slerp(transform.GetChild(1).rotation, rotation, Time.deltaTime * rotShieldSpeed);
+		}
+
+	}
+
+	void RocketsAim(float xAxis , float zAxis) {
+		
+		Vector3 targetDir = new Vector3(xAxis , 0 , zAxis);
+		
+		if (targetDir.sqrMagnitude > 0.21f) {
+			// rotation of the ship
+			var rotation= Quaternion.LookRotation(targetDir, Vector3.up);
+			transform.GetChild(2).rotation = Quaternion.Slerp(transform.GetChild(2).rotation, rotation, Time.deltaTime * rotShieldSpeed);
+		}
+	}
+
+	void RocketShoot() {
+
+		GameObject bullet = Instantiate (bulletPrefab , rocketSpawnPoint.position , rocketSpawnPoint.transform.rotation) as GameObject;
+		Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+		
+		bulletRb.AddForce(bullet.transform.up * gatlinShootForce);
+		
+		Destroy(bullet , 5.0f);
+
 	}
 
 }
