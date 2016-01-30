@@ -24,6 +24,10 @@ public class Helicopter : MonoBehaviour {
 
 	bool distanceReached = false;
 
+	float life = 2.0f;
+
+	public float helicopterHeight = 5.0f;
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -45,7 +49,6 @@ public class Helicopter : MonoBehaviour {
 			    distanceReached = true;
 		}
 
-
 		transform.forward = player.transform.position - transform.position;
 
 		if (distanceReached)
@@ -56,7 +59,7 @@ public class Helicopter : MonoBehaviour {
 			transform.SetParent(player.transform);
 		}
 
-
+		transform.position = new Vector3(transform.position.x, player.transform.position.y + helicopterHeight, transform.position.z);
 
 		if (((Time.time - lastShoot) > shootingRate) && PlayerInSight())
 		{
@@ -77,5 +80,22 @@ public class Helicopter : MonoBehaviour {
 	bool PlayerInSight()
 	{
 		return true;
+	}
+
+	void Kill()
+	{
+		Destroy(this.gameObject);
+	}
+
+	public void Hit(float lifePoints)
+	{
+		life -= lifePoints;
+		ControlIfDie();
+	}
+
+	void ControlIfDie()
+	{
+		if (life <= 0.0f)
+			Kill ();
 	}
 }
