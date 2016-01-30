@@ -43,7 +43,7 @@ public class InputController : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public Transform[] gatlinLeftSpawnPoint;
 	public Transform[] gatlinRightSpawnPoint;
-	public Transform rocketSpawnPoint;
+	public Transform[] rocketSpawnPoint;
 
 	public bool canDeflect;
 //	public string veritcalAimGatlinAxis;
@@ -117,8 +117,9 @@ public class InputController : MonoBehaviour {
 		float shieldV = GetAxis(2,"RightRotationV") * rotShieldSpeed;
 		Shield(shieldH, shieldV);
 
-		if(GetAxis(2,"ShootIper") > 0.1f) {
+		if(GetButtonDown(2,"ShootIper")) {
 			GameController.instance.playerLife += 50.0f;
+			GameController.instance.energy -= 10.0f;
 		}
 
 		float rocketH = GetAxis(3, "RightRotationH") * rotRocketSpeed;
@@ -133,7 +134,7 @@ public class InputController : MonoBehaviour {
 		} else if(GetAxis(3,"ShootIper") > 0.1f) {
 			if(((Time.time - lastRocketShoot) > improvedrocketShootingRate)) {
 				lastGatlinShoot = Time.time;
-				RocketShoot();
+				IperRocketShoot();
 			}
 		}
 
@@ -190,6 +191,11 @@ public class InputController : MonoBehaviour {
 		return Rewired.ReInput.players.GetPlayer(player).GetButton(name);
 	}
 
+	bool GetButtonDown(int player, string name) 
+	{
+		return Rewired.ReInput.players.GetPlayer(player).GetButtonDown(name);
+	}
+
 	float GetAxis(int player, string name) {
 		return Rewired.ReInput.players.GetPlayer(player).GetAxis(name);
 	}
@@ -216,6 +222,8 @@ public class InputController : MonoBehaviour {
 			transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, rotation, Time.deltaTime * rotSpeed);
 			
 		}
+
+		GameController.instance.energy -= 1.0f/Time.deltaTime;
 	}
 
 
@@ -233,16 +241,18 @@ public class InputController : MonoBehaviour {
 		GameObject leftBullet = Instantiate (bulletPrefab , gatlinLeftSpawnPoint[0].position , gatlinLeftSpawnPoint[0].transform.rotation) as GameObject;
 		Rigidbody bulletLeftRb = leftBullet.GetComponent<Rigidbody>();
 
-		bulletLeftRb.AddForce(leftBullet.transform.up * gatlinShootForce);
+		bulletLeftRb.AddForce(leftBullet.transform.forward * gatlinShootForce);
 
 		Destroy(leftBullet , 3.0f);
 
 		GameObject rightBullet = Instantiate (bulletPrefab , gatlinRightSpawnPoint[0].position , gatlinRightSpawnPoint[0].transform.rotation) as GameObject;
 		Rigidbody bulletRightRb = rightBullet.GetComponent<Rigidbody>();
 		
-		bulletRightRb.AddForce(rightBullet.transform.up * gatlinShootForce);
+		bulletRightRb.AddForce(rightBullet.transform.forward * gatlinShootForce);
 		
 		Destroy(rightBullet , 3.0f);
+
+		GameController.instance.energy -= 1.0f/gatlingShootingRate;
 	
 	}
 
@@ -252,9 +262,11 @@ public class InputController : MonoBehaviour {
 			GameObject leftBullet = Instantiate (bulletPrefab , gatlinLeftSpawnPoint[i].position , gatlinLeftSpawnPoint[i].transform.rotation) as GameObject;
 			Rigidbody bulletLeftRb = leftBullet.GetComponent<Rigidbody>();
 			
-			bulletLeftRb.AddForce(leftBullet.transform.up * gatlinShootForce);
+			bulletLeftRb.AddForce(leftBullet.transform.forward * gatlinShootForce);
 			
 			Destroy(leftBullet , 3.0f);
+
+			GameController.instance.energy -= 10.0f/gatlingShootingRate;
 
 		}
 
@@ -262,7 +274,7 @@ public class InputController : MonoBehaviour {
 			GameObject rightBullet = Instantiate (bulletPrefab , gatlinRightSpawnPoint[i].position , gatlinRightSpawnPoint[i].transform.rotation) as GameObject;
 			Rigidbody bulletRightRb = rightBullet.GetComponent<Rigidbody>();
 			
-			bulletRightRb.AddForce(rightBullet.transform.up * gatlinShootForce);
+			bulletRightRb.AddForce(rightBullet.transform.forward * gatlinShootForce);
 			
 			Destroy(rightBullet , 3.0f);
 		}
@@ -295,13 +307,35 @@ public class InputController : MonoBehaviour {
 
 	void RocketShoot() {
 
-		GameObject bullet = Instantiate (bulletPrefab , rocketSpawnPoint.position , rocketSpawnPoint.transform.rotation) as GameObject;
-		Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-		
-		bulletRb.AddForce(bullet.transform.up * gatlinShootForce);
-		
-		Destroy(bullet , 3.0f);
+		for ( int i = 0; i < rocketSpawnPoint.Length ; i ++ ) {
+			GameObject bullet = Instantiate (bulletPrefab , rocketSpawnPoint[i].position , rocketSpawnPoint[i].transform.rotation) as GameObject;
+			Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+			
+			bulletRb.AddForce(bullet.transform.up * gatlinShootForce);
+			
+			Destroy(bullet , 3.0f);
 
+		}
+
+		GameController.instance.energy -= 1.0f/rocketShootingRate;
+
+	}
+
+	void IperRocketShoot() {
+
+		for ( int i = 0; i < rocketSpawnPoint.Length ; i ++ ) {
+
+			GameObject bullet = Instantiate (bulletPrefab , rocketSpawnPoint[i].position , rocketSpawnPoint[i].transform.rotation) as GameObject;
+			Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+			
+			bulletRb.AddForce(bullet.transform.up * gatlinShootForce);
+			
+			Destroy(bullet , 3.0f);
+		
+		}
+
+		GameController.instance.energy -= 10.0f/rocketShootingRate;
+		
 	}
 
 	void EnableBouncingShield() {

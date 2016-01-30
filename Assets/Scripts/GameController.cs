@@ -14,6 +14,9 @@ public class GameController : MonoBehaviour {
 	public float playerLife = 400.0f;
 	private float maxPlayerLife;
 
+	public float energy = 100.0f;
+	public float energyRegen = 20.0f;
+
 	public UnityEngine.UI.Slider lifeSlider;
 
 	public static GameController instance;

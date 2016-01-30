@@ -45,6 +45,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Fx Explosion Pack\Script\DestroyEffect.cs" />
+     <Compile Include="Assets\Fx Explosion Pack\Script\csLightControl.cs" />
      <Compile Include="Assets\Rewired\Examples\ControlRemapping1\Scripts\ControlRemappingDemo1.cs" />
      <Compile Include="Assets\Rewired\Examples\CustomControllersTouch\Scripts\CustomControllerDemo.cs" />
      <Compile Include="Assets\Rewired\Examples\CustomControllersTouch\Scripts\CustomControllerDemo_Player.cs" />
@@ -96,6 +98,11 @@
      <Compile Include="Assets\Scripts\Helicopter\Helicopter.cs" />
      <Compile Include="Assets\Scripts\Helicopter\HelicopterSpawner.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
+     <Compile Include="Assets\Scripts\MyBullet.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\HugeExplosion.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\QuickTimeController.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\QuickTimeElement.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\QuickTimeSingle.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\Tank\EnemyTank.cs" />
      <Compile Include="Assets\Scripts\Tank\TankCreator.cs" />

@@ -25,7 +25,7 @@ public class EnemyTank : MonoBehaviour {
 	bool playerNear = false;
 	public float playerDistanceToShoot = 6.0f;
 
-	float life = 2.0f;
+	public float life = 2.0f;
 
 	// Use this for initialization
 	void Start () {

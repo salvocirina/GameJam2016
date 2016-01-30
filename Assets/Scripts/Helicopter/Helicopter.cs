@@ -24,7 +24,7 @@ public class Helicopter : MonoBehaviour {
 
 	bool distanceReached = false;
 
-	float life = 2.0f;
+	public float life = 2.0f;
 
 	public float helicopterHeight = 5.0f;
 
