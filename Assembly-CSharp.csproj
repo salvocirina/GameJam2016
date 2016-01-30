@@ -6,11 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-<<<<<<< HEAD
 	<ProjectGuid>{BA52F004-E8F5-C3EB-B0A0-7A99BFD036B2}</ProjectGuid>
-=======
-	<ProjectGuid>{09B76A31-93AB-F177-B975-93F8D4D1111E}</ProjectGuid>
->>>>>>> f6995c49544c2d7a88cb75ed25a1c07ace5e3403
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp</AssemblyName>
@@ -50,11 +46,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Helicopter\Helicopter.cs" />
+     <Compile Include="Assets\Scripts\Helicopter\HelicopterSpawner.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
      <Compile Include="Assets\Scripts\Tank\EnemyTank.cs" />
      <Compile Include="Assets\Scripts\Tank\TankCreator.cs" />
      <Compile Include="Assets\Scripts\Tank\TankCreatorGroup.cs" />
      <Compile Include="Assets\Scripts\Tank\TankMissile.cs" />
+     <Compile Include="Assets\Scripts\UIController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

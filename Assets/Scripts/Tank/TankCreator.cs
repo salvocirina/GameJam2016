@@ -6,13 +6,13 @@ public class TankCreator : MonoBehaviour {
 	public GameObject tankPrefab;
 	public Transform startingPosition;
 	public Transform endingPosition;
-	public int tankNumber = 10;
+	//public int tankNumber = 10;
 
 	float actualDiff = 0.0f;
 
-	public float xDiff = 2.0f;
+	//public float xDiff = 2.0f;
 
-	public float spawnTime = 1.0f;
+	//public float spawnTime = 1.0f;
 	float lastSpawn = 0.0f;
 
 	void Start () {
