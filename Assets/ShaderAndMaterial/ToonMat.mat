@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ToonMat
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: f5cca88abd9534f4295e311b576afc98, type: 3}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2000
@@ -104,7 +104,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .519999981
+        second: .270000011
       data:
         first:
           name: _Parallax
@@ -116,7 +116,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .792999983
+        second: .0439999998
       data:
         first:
           name: _BumpScale
@@ -140,7 +140,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .458000004
+        second: .836000025
       data:
         first:
           name: _EmissionScaleUI
@@ -148,7 +148,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00520000001
+        second: .0027999999
     m_Colors:
       data:
         first:

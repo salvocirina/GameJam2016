@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 240.899994, y: 39.4000015, z: 18.3183136}
+  m_LocalPosition: {x: 240.899994, y: 15, z: 117.800003}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 467646}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.66000056, y: 1.32500005, z: 5.13408422}
+  m_LocalPosition: {x: 3.5, y: 1, z: 5}
   m_LocalScale: {x: .0500000007, y: .0500000007, z: .0500000007}
   m_Children: []
   m_Father: {fileID: 428498}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a99b8b1b553d0040abf102bb81d610d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helicopterPrefab: {fileID: 156716, guid: 487a89dbedd6a9e42af28ae9bc559722, type: 2}
+  helicopterPrefab: {fileID: 159078, guid: 40be0023f733d8444a9589877223c624, type: 2}
   timeToSpawn: 3
   startingPosition: {fileID: 467646}
   numberToSpawn: 10

@@ -265,8 +265,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250, y: 39, z: 75}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalPosition: {x: 106.800003, y: 4.30000019, z: 76.4000015}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 481864}
   - {fileID: 450070}
@@ -498,7 +498,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &6503638
 BoxCollider:
@@ -584,13 +584,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movSpeed: 75
-  rotSpeed: 45
-  rotShieldSpeed: 75
-  rotRocketSpeed: 35
+  rotSpeed: 1
+  rotGatlinSpeed: 15
+  rotShieldSpeed: 2
+  rotRocketSpeed: 1.5
   gatlinShootForce: 5000
   gatlingShootingRate: .200000003
-  minClampGatlin: -25
-  maxClampGatlin: 25
+  rocketShootingRate: 1
+  minClampGatlin: -50
+  maxClampGatlin: 50
   horizontalAxis: JoyHorizontal
   horizontalAimAxis: JoyAimHorizontal
   veritcalAxis: JoyVertical
@@ -604,6 +606,7 @@ MonoBehaviour:
   gatlinLeftSpawnPoint: {fileID: 445912}
   gatlinRightSpawnPoint: {fileID: 425848}
   rocketSpawnPoint: {fileID: 454678}
+  canDeflect: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -13,7 +13,7 @@ public class Helicopter : MonoBehaviour {
 
 	public GameObject missilePrefab;
 	
-	public GameObject point;
+	public GameObject[] point;
 	
 	public float shootingRate = 0.5f;
 	
@@ -57,6 +57,7 @@ public class Helicopter : MonoBehaviour {
 				transform.RotateAround(player.transform.position, Vector3.up, Time.deltaTime * rotationSpeed);
 
 			transform.SetParent(player.transform);
+
 		}
 
 		transform.position = new Vector3(transform.position.x, player.transform.position.y + helicopterHeight, transform.position.z);
@@ -70,9 +71,10 @@ public class Helicopter : MonoBehaviour {
 
 	void Shoot()
 	{
-		if (missilePrefab != null && point != null)
-		{
-			GameObject missile = (GameObject) Instantiate(missilePrefab, point.transform.position, point.transform.rotation) as GameObject;
+//		if (missilePrefab != null && point != null)
+//		{
+		for(int i = 0 ; i < point.Length; i++) {
+			GameObject missile = (GameObject) Instantiate(missilePrefab, point[i].transform.position, point[i].transform.rotation) as GameObject;
 		}
 	}
 	

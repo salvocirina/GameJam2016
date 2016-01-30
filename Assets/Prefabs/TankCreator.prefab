@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbd35f0a24125439a67d267b2aafd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefab: {fileID: 174902, guid: e1d9f7c6d4953ff47aae5b1b7f827039, type: 2}
+  tankPrefab: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
   startingPosition: {fileID: 444820}
   endingPosition: {fileID: 494982}
 --- !u!1001 &100100000
@@ -104,7 +104,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: tankPrefab
+      value: 
+      objectReference: {fileID: 181314, guid: 92e48af0a3b929c45969650ea8d29597, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127062}

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyTank : MonoBehaviour {
 
-	public GameObject cannon;
+//	public GameObject this;
 
 	GameObject player;
 
@@ -41,10 +41,10 @@ public class EnemyTank : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (cannon != null)
+		if (this != null)
 		{
 			Vector3 direction = transform.position - player.transform.position;
-			cannon.transform.forward = direction;
+			this.transform.forward = -direction;
 		}
 
 		if (!arrived && endingPoint != null){
@@ -61,7 +61,7 @@ public class EnemyTank : MonoBehaviour {
 //		}
 
 		//Ray ray = new Ray(transform.position, transform.position - player.transform.position);
-		Ray ray = new Ray(point.transform.position, -cannon.transform.forward);
+		Ray ray = new Ray(point.transform.position, -this.transform.forward);
 		RaycastHit hit;
 //		if (Physics.Raycast (ray, out hit)) {	
 //			Debug.Log (hit.transform.gameObject.name);
