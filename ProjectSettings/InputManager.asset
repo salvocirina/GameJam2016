@@ -198,6 +198,22 @@ InputManager:
     axis: 3
     joyNum: 3
   - serializedVersion: 3
+    m_Name: JoyRocketHorizontalontal4
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: .189999998
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 4
+  - serializedVersion: 3
     m_Name: JoyAimGatlinHorizontal2
     descriptiveName: 
     descriptiveNegativeName: 
@@ -310,6 +326,22 @@ InputManager:
     axis: 4
     joyNum: 3
   - serializedVersion: 3
+    m_Name: JoyRocketVertical4
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: .189999998
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 4
+    joyNum: 4
+  - serializedVersion: 3
     m_Name: JoyAimGatlinVertical2
     descriptiveName: 
     descriptiveNegativeName: 
@@ -342,11 +374,11 @@ InputManager:
     axis: 1
     joyNum: 0
   - serializedVersion: 3
-    m_Name: GatlinFire
+    m_Name: RocketFire
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 0
+    positiveButton: joystick 4 button 5
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -354,8 +386,24 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 9
+    joyNum: 4
+  - serializedVersion: 3
+    m_Name: GatlinFire
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick 2 button 5
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: Fire2

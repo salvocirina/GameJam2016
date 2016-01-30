@@ -76,8 +76,7 @@ public class InputController : MonoBehaviour {
 		float aimGatlinH = Input.GetAxis(horizontalAimGatlinAxis) * rotSpeed;
 //		float aimGatlinV = Input.GetAxis(veritcalAimGatlinAxis) * rotSpeed;
 		RotateGatlinGun(aimGatlinH);
-
-		if(Input.GetAxis("GatlinFire") > 0.1f) {
+		if(Input.GetButton("GatlinFire")) {
 			if(((Time.time - lastShoot) > gatlingShootingRate)) {
 				lastShoot = Time.time;
 				GatlinShoot();
@@ -92,7 +91,7 @@ public class InputController : MonoBehaviour {
 		float rocketV = Input.GetAxis(veritcalRocketAxis) * rotRocketSpeed;
 		RocketsAim(rocketH, rocketV);
 
-		if(Input.GetAxis("RocketFire") > 0.1f) {
+		if(Input.GetButton("RocketFire") ) {
 			if(((Time.time - lastShoot) > gatlingShootingRate)) {
 				lastShoot = Time.time;
 				RocketShoot();
@@ -125,6 +124,7 @@ public class InputController : MonoBehaviour {
 	}
 
 	void GatlinShoot() {
+
 
 		GameObject leftBullet = Instantiate (bulletPrefab , gatlinLeftSpawnPoint.position , gatlinLeftSpawnPoint.transform.rotation) as GameObject;
 		Rigidbody bulletLeftRb = leftBullet.GetComponent<Rigidbody>();
@@ -172,7 +172,7 @@ public class InputController : MonoBehaviour {
 		
 		bulletRb.AddForce(bullet.transform.up * gatlinShootForce);
 		
-		Destroy(bullet , 5.0f);
+		Destroy(bullet , 3.0f);
 
 	}
 
