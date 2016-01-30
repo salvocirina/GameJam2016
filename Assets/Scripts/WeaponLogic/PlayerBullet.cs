@@ -3,6 +3,12 @@ using System.Collections;
 
 public class PlayerBullet : MonoBehaviour {
 
+
+	void Start() {
+
+		GetComponent<SphereCollider>().enabled = false;
+	}
+
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Tank")
@@ -13,11 +19,23 @@ public class PlayerBullet : MonoBehaviour {
 			
 			Autodestroy();
 		}
+
+		if (other.gameObject.tag == "Helicopter")
+		{
+			Helicopter helicopter = other.gameObject.GetComponent<Helicopter>();
+			if (helicopter != null) {
+
+				helicopter.Hit(1.0f);
+				GetComponent<SphereCollider>().transform.gameObject.SetActive(true);
+			}
+			
+			Autodestroy();
+		}
 	}
 	
 	void Autodestroy()
 	{
-		Destroy(this.gameObject);
+		Destroy(this.gameObject,.3f);
 	}
 
 }

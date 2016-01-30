@@ -18,7 +18,8 @@ public class MyBullet : MonoBehaviour {
 			other.GetComponent<EnemyTank>().life -= 1.0f;
 		}
 
-		else if ( other.gameObject.tag == "Helicopter") {
+		if ( other.gameObject.tag == "Helicopter") {
+			Debug.Log("elicottero");
 			other.GetComponent<Helicopter>().life = -1.0f;
 		}
 	}

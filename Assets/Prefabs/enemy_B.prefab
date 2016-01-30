@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootingPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,8 @@ GameObject:
   - 95: {fileID: 9575590}
   - 114: {fileID: 11429694}
   - 65: {fileID: 6591426}
-  m_Layer: 0
+  - 54: {fileID: 5430092}
+  m_Layer: 9
   m_Name: enemy_B
   m_TagString: Helicopter
   m_Icon: {fileID: 0}
@@ -43,7 +44,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +122,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159078}
   m_Mesh: {fileID: 4300000, guid: 6b0b47f4728ce114282de6aef5264cc1, type: 3}
+--- !u!54 &5430092
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159078}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6591426
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -128,7 +144,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159078}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 11.3992844, y: 2.61127901, z: 6.83514452}
@@ -161,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce36d3ab0931c6419b9a98bb174826f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 50
+  distance: 80
   moveSpeed: 40
   rotationSpeed: 50
   missilePrefab: {fileID: 196334, guid: bacad3fe64156f84f9ef7f72bc536f6c, type: 2}
@@ -185,6 +201,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: distance
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

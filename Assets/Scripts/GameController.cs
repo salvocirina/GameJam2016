@@ -11,11 +11,14 @@ public class GameController : MonoBehaviour {
 		Strong
 	}
 
+	public GameObject player;
+
 	public float playerLife = 400.0f;
 	private float maxPlayerLife;
 
 	public float energy = 100.0f;
 	public float energyRegen = 20.0f;
+	bool canRegen = true;
 
 	public UnityEngine.UI.Slider lifeSlider;
 
@@ -36,7 +39,31 @@ public class GameController : MonoBehaviour {
 		if(playerLife > maxPlayerLife)
 			playerLife = maxPlayerLife;
 
-		lifeSlider.value = playerLife;
+		lifeSlider.value = playerLife; 
+
+		if(energy <= 0) {
+			player.GetComponent<InputController>().disable = true;
+			canRegen=false;
+			energy=0;
+			Invoke("ReEnableEngine",1);
+		}
+		if(canRegen && energy <= 100.0f)
+		StartCoroutine(RegenEnergy());
+	}
+
+	IEnumerator RegenEnergy(){
+		yield return new WaitForSeconds(1);
+		if(energy <= 80)
+			energy+=energyRegen;
+		else if(energy >= 80)
+			energy = 100.0f;
+		StopAllCoroutines();
+	
+	}
+
+	void ReEnableEngine(){
+		player.GetComponent<InputController>().disable = false;
+		canRegen=true;
 	}
 
 	public void TakeHit(HitType type)
@@ -56,6 +83,5 @@ public class GameController : MonoBehaviour {
 			playerLife -= 20f;
 		}
 
-//		lifeSlider.value = playerLife;
 	}
 }

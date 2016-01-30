@@ -106,4 +106,10 @@ public class Helicopter : MonoBehaviour {
 		if (life <= 0.0f)
 			Kill ();
 	}
+
+	void OnTriggerEnter( Collider other) {
+		Debug.Log("esplosione");
+		if(other.gameObject.tag == "Bullet")
+			Hit (1);
+	}
 }

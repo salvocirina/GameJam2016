@@ -45,7 +45,8 @@ public class InputController : MonoBehaviour {
 	public Transform[] gatlinRightSpawnPoint;
 	public Transform[] rocketSpawnPoint;
 
-	public bool canDeflect;
+	public bool disable;
+	private bool shieldActive;
 //	public string veritcalAimGatlinAxis;
 
 	void Awake() {
@@ -59,6 +60,10 @@ public class InputController : MonoBehaviour {
 		runSpeed = movSpeed * 2.0f;
 
 		improvedrocketShootingRate = rocketShootingRate/2;
+
+		disable = false;
+
+		transform.GetChild(2).GetChild(0).GetChild(0).gameObject.SetActive(false);
 
 //		horizontalAxis += gameObject.name;
 //		veritcalAxis += gameObject.name;
@@ -78,64 +83,80 @@ public class InputController : MonoBehaviour {
 	
 	// Update is called onceper frame
 	void Update () {
-		Debug.Log("Rewired shoot: " + Rewired.ReInput.players.GetPlayer(0).GetButton("Shoot"));
-		Debug.Log("Rewired h axis left: " + GetAxis(1, "IperShoot"));
+	
 
-//			float moveH = GetAxis(0,"LeftRotationH") * runSpeed;
-//			float moveV = GetAxis(0,"LeftRotationV") * runSpeed;
-//			Move(moveH, moveV);
-		if(GetAxis(0,"ShootIper") > 0.1f){
-			float moveH = GetAxis(0,"LeftRotationH") * runSpeed;
-			float moveV = GetAxis(0,"LeftRotationV") * runSpeed;
-			Move(moveH, moveV);
-		} else {
-			float moveH = GetAxis(0,"LeftRotationH") * movSpeed;
-			float moveV = GetAxis(0,"LeftRotationV") * movSpeed;
-			Move(moveH, moveV);
+
+		if(!disable) {
+			if(GetAxis(0,"ShootIper") > 0.1f){
+				float moveH = GetAxis(0,"LeftRotationH") * runSpeed;
+				float moveV = GetAxis(0,"LeftRotationV") * runSpeed;
+				Move(moveH, moveV);
+				GameController.instance.energy -= 10f*Time.deltaTime;
+
+
+			} else {
+				float moveH = GetAxis(0,"LeftRotationH") * movSpeed;
+				float moveV = GetAxis(0,"LeftRotationV") * movSpeed;
+				Move(moveH, moveV);
+				if(moveH>0||moveV>0)
+					GameController.instance.energy -= 1.0f*Time.deltaTime;
+
+			}
+
+			float aimH = GetAxis(0,"RightRotationH") * rotSpeed;
+			float aimV = GetAxis(0,"RightRotationV") * rotSpeed;
+			Aim(aimH, aimV);
+
+			float aimGatlinH = GetAxis(1, "RightRotationH") * rotGatlinSpeed;
+			RotateGatlinGun(aimGatlinH);
+
+			if(GetAxis(1,"Shoot") > 0.1f) {
+				if(((Time.time - lastGatlinShoot) > gatlingShootingRate)) {
+					lastGatlinShoot = Time.time;
+					GatlinShoot();
+				}
+			} else if(GetAxis(1,"ShootIper") > 0.1f) {
+				if(((Time.time - lastGatlinShoot) > gatlingShootingRate)) {
+					lastGatlinShoot = Time.time;
+					IperGatlinShoot();
+				}
+			}
+
+			float shieldH = GetAxis(2, "RightRotationH") * rotShieldSpeed;
+			float shieldV = GetAxis(2,"RightRotationV") * rotShieldSpeed;
+			Shield(shieldH, shieldV);
+
+			if(GetButtonDown(2, "Shoot")) {
+				EnableShield();
+			}
+
+			if(shieldActive)
+				GameController.instance.energy -= 1.0f*Time.deltaTime;
+
+			if(GetButtonDown(2,"ShootIper")) {
+				GameController.instance.playerLife += 50.0f;
+				GameController.instance.energy -= 10.0f;
+			}
+
+			float rocketH = GetAxis(3, "RightRotationH") * rotRocketSpeed;
+			float rocketV = GetAxis(3,"RightRotationV") * rotRocketSpeed;
+			RocketsAim(rocketH, rocketV);
+
+			if(GetAxis(3,"Shoot") > 0.1f) {
+				if(((Time.time - lastRocketShoot) > rocketShootingRate)) {
+					lastRocketShoot = Time.time;
+					RocketShoot();
+				}
+			} else if(GetAxis(3,"ShootIper") > 0.1f) {
+				if(((Time.time - lastRocketShoot) > improvedrocketShootingRate)) {
+					lastRocketShoot = Time.time;
+					IperRocketShoot();
+				}
+			}
+
 		}
-
-		float aimH = GetAxis(0,"RightRotationH") * rotSpeed;
-		float aimV = GetAxis(0,"RightRotationV") * rotSpeed;
-		Aim(aimH, aimV);
-
-		float aimGatlinH = GetAxis(1, "RightRotationH") * rotGatlinSpeed;
-		RotateGatlinGun(aimGatlinH);
-
-		if(GetAxis(1,"Shoot") > 0.1f) {
-			if(((Time.time - lastGatlinShoot) > gatlingShootingRate)) {
-				lastGatlinShoot = Time.time;
-				GatlinShoot();
-			}
-		} else if(GetAxis(1,"ShootIper") > 0.1f) {
-			if(((Time.time - lastGatlinShoot) > gatlingShootingRate)) {
-				lastGatlinShoot = Time.time;
-				IperGatlinShoot();
-			}
-		}
-
-		float shieldH = GetAxis(2, "RightRotationH") * rotShieldSpeed;
-		float shieldV = GetAxis(2,"RightRotationV") * rotShieldSpeed;
-		Shield(shieldH, shieldV);
-
-		if(GetButtonDown(2,"ShootIper")) {
-			GameController.instance.playerLife += 50.0f;
-			GameController.instance.energy -= 10.0f;
-		}
-
-		float rocketH = GetAxis(3, "RightRotationH") * rotRocketSpeed;
-		float rocketV = GetAxis(3,"RightRotationV") * rotRocketSpeed;
-		RocketsAim(rocketH, rocketV);
-
-		if(GetAxis(3,"Shoot") > 0.1f) {
-			if(((Time.time - lastRocketShoot) > rocketShootingRate)) {
-				lastRocketShoot = Time.time;
-				RocketShoot();
-			}
-		} else if(GetAxis(3,"ShootIper") > 0.1f) {
-			if(((Time.time - lastRocketShoot) > improvedrocketShootingRate)) {
-				lastRocketShoot = Time.time;
-				IperRocketShoot();
-			}
+		else {
+			rb.velocity= new Vector3(0,0,0);
 		}
 
 		/*
@@ -223,7 +244,7 @@ public class InputController : MonoBehaviour {
 			
 		}
 
-		GameController.instance.energy -= 1.0f/Time.deltaTime;
+		//GameController.instance.energy -= 1.0f/Time.deltaTime;
 	}
 
 
@@ -279,6 +300,18 @@ public class InputController : MonoBehaviour {
 			Destroy(rightBullet , 3.0f);
 		}
 		
+	}
+
+	void EnableShield() {
+		if(shieldActive) {
+			transform.GetChild(2).GetChild(0).GetChild(0).gameObject.SetActive(false);
+			shieldActive = false;
+		}
+		else if (!shieldActive) {
+         	transform.GetChild(2).GetChild(0).GetChild(0).gameObject.SetActive(true);
+			shieldActive = true;
+		}
+
 	}
 
 	void Shield(float xAxis , float zAxis) {
@@ -338,14 +371,14 @@ public class InputController : MonoBehaviour {
 		
 	}
 
-	void EnableBouncingShield() {
-
-		if(Input.GetAxis("BouncingShield") > 0.1f) {
-			canDeflect = true;
-		}
-		else {
-			canDeflect = false;
-		}
-	}
+//	void EnableBouncingShield() {
+//
+//		if(Input.GetAxis("BouncingShield") > 0.1f) {
+//			canDeflect = true;
+//		}
+//		else {
+//			canDeflect = false;
+//		}
+//	}
 
 }

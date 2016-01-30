@@ -47,7 +47,7 @@ public class TankMissile : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Player")
 		{
