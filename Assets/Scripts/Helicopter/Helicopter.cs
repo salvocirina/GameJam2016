@@ -53,10 +53,13 @@ public class Helicopter : MonoBehaviour {
 
 		if (distanceReached)
 		{
+
 			if ((Time.time - startTime) > startRotationTime)
 				transform.RotateAround(player.transform.position, Vector3.up, Time.deltaTime * rotationSpeed);
 
-			transform.SetParent(player.transform);
+			transform.position = new Vector3(
+
+//			transform.SetParent(player.transform);
 
 		}
 
@@ -73,7 +76,7 @@ public class Helicopter : MonoBehaviour {
 	{
 //		if (missilePrefab != null && point != null)
 //		{
-		for(int i = 0 ; i < point.Length; i++) {
+		for (int i = 0 ; i < point.Length; i++) {
 			GameObject missile = (GameObject) Instantiate(missilePrefab, point[i].transform.position, point[i].transform.rotation) as GameObject;
 		}
 	}

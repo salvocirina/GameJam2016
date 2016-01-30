@@ -27,6 +27,7 @@ GameObject:
   - 23: {fileID: 2390028}
   - 95: {fileID: 9575590}
   - 114: {fileID: 11429694}
+  - 65: {fileID: 6591426}
   m_Layer: 0
   m_Name: enemy_B
   m_TagString: Helicopter
@@ -120,6 +121,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159078}
   m_Mesh: {fileID: 4300000, guid: 6b0b47f4728ce114282de6aef5264cc1, type: 3}
+--- !u!65 &6591426
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.3992844, y: 2.61127901, z: 6.83514452}
+  m_Center: {x: 0, y: .999702692, z: -1.7151649}
 --- !u!95 &9575590
 Animator:
   serializedVersion: 3
@@ -157,6 +170,7 @@ MonoBehaviour:
   - {fileID: 118718}
   shootingRate: .200000003
   startRotationTime: 0
+  life: 2
   helicopterHeight: 30
 --- !u!1001 &100100000
 Prefab:

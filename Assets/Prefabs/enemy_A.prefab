@@ -27,6 +27,7 @@ GameObject:
   - 23: {fileID: 2372056}
   - 95: {fileID: 9525466}
   - 114: {fileID: 11454850}
+  - 65: {fileID: 6524740}
   m_Layer: 0
   m_Name: enemy_A
   m_TagString: Tank
@@ -91,6 +92,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181314}
   m_Mesh: {fileID: 4300006, guid: 8c132fb0dcb929e4ea2eff20cadb8788, type: 3}
+--- !u!65 &6524740
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.51468325, y: 5.18064594, z: 6.5450058}
+  m_Center: {x: 0, y: 1.17816484, z: -1.9300642}
 --- !u!95 &9525466
 Animator:
   serializedVersion: 3
@@ -126,6 +139,7 @@ MonoBehaviour:
   point: {fileID: 159390}
   shootingRate: .300000012
   playerDistanceToShoot: 180
+  life: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
