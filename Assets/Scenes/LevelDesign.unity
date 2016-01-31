@@ -6820,7 +6820,7 @@ Transform:
   m_Children:
   - {fileID: 1644634312}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
 --- !u!1 &700891799
 GameObject:
   m_ObjectHideFlags: 0
@@ -17916,6 +17916,7 @@ MonoBehaviour:
   - {fileID: 1915034812}
   - {fileID: 15542368}
   disable: 0
+  isDead: 0
   anim: {fileID: 0}
 --- !u!95 &1881952150
 Animator:
