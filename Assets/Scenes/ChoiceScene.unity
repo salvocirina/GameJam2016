@@ -875,6 +875,7 @@ MonoBehaviour:
   cannonSprite: {fileID: 899831647}
   shieldSprite: {fileID: 1537736313}
   bodySprite: {fileID: 1280858714}
+  tastoScelto: 00000000
   timerMax: 3
   text: {fileID: 1412174582}
 --- !u!4 &1245378758

@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour {
 	private float maxPlayerLife;
 
 	public float playerSpecialEnergy = 0.0f;
-	private float maxPlayerSpecialEnergy = 100.0f;
+	public float maxPlayerSpecialEnergy = 100.0f;
 
 	public float energy = 100.0f;
 	public float energyRegen = 20.0f;
@@ -125,6 +125,7 @@ public class GameController : MonoBehaviour {
 	void GameOver() {
 		gameOver.gameObject.SetActive(true);
 		InputController.instance.isDead = true;
+//		Time.timeScale = 0f;
 	}
 
 	IEnumerator RegenEnergy(){
