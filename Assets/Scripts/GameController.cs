@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
 
 	public GameObject player;
 
-
+	public GameObject gameOver;
 
 	public float playerLife = 400.0f;
 	private float maxPlayerLife;
@@ -90,6 +90,8 @@ public class GameController : MonoBehaviour {
 			LifeSprite.color = new Color32(255 , 255 , 0 , 255);
 		} else if(playerLife < 150 && playerLife >= 0) {
 			LifeSprite.color = new Color32(255 , 0 , 0 , 255);
+		} else if(playerLife <= 0) {
+			Invoke("GameOver",3);
 		}
 
 		if(playerSpecialEnergy >= maxPlayerSpecialEnergy) {
@@ -118,6 +120,11 @@ public class GameController : MonoBehaviour {
 
 		if (!automaticSpecialAttackActivation)
 			SpecialPowerHandle();
+	}
+
+	void GameOver() {
+		gameOver.gameObject.SetActive(true);
+		InputController.instance.isDead = true;
 	}
 
 	IEnumerator RegenEnergy(){

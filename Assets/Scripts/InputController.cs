@@ -54,6 +54,7 @@ public class InputController : MonoBehaviour {
 	public bool disable;
 	private bool shieldActive;
 	private bool run;
+	public bool isDead;
 
 	public Animator anim;
 
@@ -77,6 +78,8 @@ public class InputController : MonoBehaviour {
 	void Start () {
 
 		runSpeed = movSpeed * 2.0f;
+
+		isDead = false;
 
 		improvedrocketShootingRate = rocketShootingRate/2;
 
@@ -112,6 +115,12 @@ public class InputController : MonoBehaviour {
 	// Update is called onceper frame
 	void Update () {
 	
+		if(isDead) {
+			if (GetButtonDown(0, "A") || GetButtonDown(1, "A") || GetButtonDown(2, "A") || GetButtonDown(3, "A"))
+				Application.LoadLevel(1);
+		}
+
+
 		if(!disable) {
 
 			anim.SetBool("Run" , run); 

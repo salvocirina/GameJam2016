@@ -9,6 +9,7 @@ TagManager:
   - Tank
   - Bullet
   - Tower
+  - Choices
   layers:
   - Default
   - TransparentFX
