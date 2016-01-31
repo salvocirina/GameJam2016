@@ -15,6 +15,8 @@ public class ChoiceScene : MonoBehaviour {
 	public UnityEngine.UI.Image shieldSprite;
 	public UnityEngine.UI.Image bodySprite;
 
+	public bool[] tastoScelto;
+
 	public float timerMax = 3.0f;
 
 	float beginningTime = 0.0f;
@@ -32,63 +34,71 @@ public class ChoiceScene : MonoBehaviour {
 		if (choices != null)
 		{
 
-			if (!hasChosen[0] && GetButtonDown(0, "A"))
+			if (!hasChosen[0] && GetButtonDown(0, "A") && !tastoScelto[0])
 			{
 				choices.movements = 0;
+				tastoScelto[0] = true;
 				movementsSprite.color = colors[0];
 				hasChosen[0] = true;
 			}
 
-			if (!hasChosen[1] && GetButtonDown(1, "A"))
+			if (!hasChosen[1] && GetButtonDown(1, "A") && !tastoScelto[0])
 			{
 				choices.movements = 1;
+				tastoScelto[0] = true;
 				movementsSprite.color = colors[1];
 				hasChosen[1] = true;
 			}
 
-			if (!hasChosen[2] && GetButtonDown(2, "A"))
+			if (!hasChosen[2] && GetButtonDown(2, "A") && !tastoScelto[0])
 			{
 				choices.movements = 2;
+				tastoScelto[0] = true;
 				movementsSprite.color = colors[2];
 				hasChosen[2] = true;
 			}
 
-			if (!hasChosen[3] && GetButtonDown(3, "A"))
+			if (!hasChosen[3] && GetButtonDown(3, "A") && !tastoScelto[0])
 			{
 				choices.movements = 3;
+				tastoScelto[0] = true;
 				movementsSprite.color = colors[3];
 				hasChosen[3] = true;
 			}
 
 
 
-			if (!hasChosen[0] && GetButtonDown(0, "B"))
+			if (!hasChosen[0] && GetButtonDown(0, "B") && !tastoScelto[1])
 			{
 				choices.shield = 0;
+				tastoScelto[1] = true;
 				shieldSprite.color = colors[0];
 				bodySprite.color = colors[0];
 				hasChosen[0] = true;
 			}
 			
-			if (!hasChosen[1] && GetButtonDown(1, "B"))
+			if (!hasChosen[1] && GetButtonDown(1, "B") && !tastoScelto[1])
 			{
 				choices.shield = 1;
+				tastoScelto[1] = true;
 				shieldSprite.color = colors[1];
 				bodySprite.color = colors[1];
 				hasChosen[1] = true;
 			}
 			
-			if (!hasChosen[2] && GetButtonDown(2, "B"))
+			if (!hasChosen[2] && GetButtonDown(2, "B") && !tastoScelto[1])
 			{
 				choices.shield = 2;
+				tastoScelto[1] = true;
 				shieldSprite.color = colors[2];
 				bodySprite.color = colors[2];
 				hasChosen[2] = true;
 			}
 			
-			if (!hasChosen[3] && GetButtonDown(3, "B"))
+			if (!hasChosen[3] && GetButtonDown(3, "B") && !tastoScelto[1])
 			{
 				choices.shield = 3;
+				tastoScelto[1] = true;
 				shieldSprite.color = colors[3];
 				bodySprite.color = colors[3];
 				hasChosen[3] = true;
@@ -96,60 +106,68 @@ public class ChoiceScene : MonoBehaviour {
 
 
 
-			if (!hasChosen[0] && GetButtonDown(0, "X"))
+			if (!hasChosen[0] && GetButtonDown(0, "X") && !tastoScelto[2])
 			{
 				choices.gun = 0;
+				tastoScelto[2] = true;
 				gunSprite.color = colors[0];
 				hasChosen[0] = true;
 			}
 			
-			if (!hasChosen[1] && GetButtonDown(1, "X"))
+			if (!hasChosen[1] && GetButtonDown(1, "X") && !tastoScelto[2])
 			{
 				choices.gun = 1;
+				tastoScelto[2] = true;
 				gunSprite.color = colors[1];
 				hasChosen[1] = true;
 			}
 			
-			if (!hasChosen[2] && GetButtonDown(2, "X"))
+			if (!hasChosen[2] && GetButtonDown(2, "X") && !tastoScelto[2])
 			{
 				choices.gun = 2;
+				tastoScelto[2] = true;
 				gunSprite.color = colors[2];
 				hasChosen[2] = true;
 			}
 			
-			if (!hasChosen[3] && GetButtonDown(3, "X"))
+			if (!hasChosen[3] && GetButtonDown(3, "X") && !tastoScelto[2])
 			{
 				choices.gun = 3;
+				tastoScelto[2] = true;
 				gunSprite.color = colors[3];
 				hasChosen[3] = true;
 			}
 
 
 
-			if (!hasChosen[0] && GetButtonDown(0, "Y"))
+			if (!hasChosen[0] && GetButtonDown(0, "Y") && !tastoScelto[3])
 			{
 				choices.cannon = 0;
+				tastoScelto[3] = true;
 				cannonSprite.color = colors[0];
 				hasChosen[0] = true;
 			}
 			
-			if (!hasChosen[1] && GetButtonDown(1, "Y"))
+			if (!hasChosen[1] && GetButtonDown(1, "Y") && !tastoScelto[3])
 			{
 				choices.cannon = 1;
+				tastoScelto[3] = true;
 				cannonSprite.color = colors[1];
 				hasChosen[1] = true;
 			}
 			
-			if (!hasChosen[2] && GetButtonDown(2, "Y"))
+			if (!hasChosen[2] && GetButtonDown(2, "Y") && !tastoScelto[3])
 			{
 				choices.cannon = 2;
+				tastoScelto[3] = true;
 				cannonSprite.color = colors[2];
 				hasChosen[2] = true;
 			}
 			
-			if (!hasChosen[3] && GetButtonDown(3, "Y"))
+			if (!hasChosen[3] && GetButtonDown(3, "Y") && !tastoScelto[3])
 			{
 				choices.cannon = 3;
+				tastoScelto[3] = true;
 				cannonSprite.color = colors[3];
 				hasChosen[3] = true;
 			}
