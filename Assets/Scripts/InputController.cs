@@ -47,6 +47,7 @@ public class InputController : MonoBehaviour {
 //	public string horizontalAimGatlinAxis;
 
 	public GameObject bulletPrefab;
+	public GameObject bulletBigPrefab;
 	public Transform[] gatlinLeftSpawnPoint;
 	public Transform[] gatlinRightSpawnPoint;
 	public Transform[] rocketSpawnPoint;
@@ -394,7 +395,7 @@ public class InputController : MonoBehaviour {
 	void RocketShoot() {
 
 		for ( int i = 0; i < rocketSpawnPoint.Length ; i ++ ) {
-			GameObject bullet = Instantiate (bulletPrefab , rocketSpawnPoint[i].position , rocketSpawnPoint[i].transform.rotation) as GameObject;
+			GameObject bullet = Instantiate (bulletBigPrefab , rocketSpawnPoint[i].position , rocketSpawnPoint[i].transform.rotation) as GameObject;
 			Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 			
 			bulletRb.AddForce(bullet.transform.up * gatlinShootForce);
@@ -411,7 +412,7 @@ public class InputController : MonoBehaviour {
 
 		for ( int i = 0; i < rocketSpawnPoint.Length ; i ++ ) {
 
-			GameObject bullet = Instantiate (bulletPrefab , rocketSpawnPoint[i].position , rocketSpawnPoint[i].transform.rotation) as GameObject;
+			GameObject bullet = Instantiate (bulletBigPrefab , rocketSpawnPoint[i].position , rocketSpawnPoint[i].transform.rotation) as GameObject;
 			Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 			
 			bulletRb.AddForce(bullet.transform.up * gatlinShootForce);

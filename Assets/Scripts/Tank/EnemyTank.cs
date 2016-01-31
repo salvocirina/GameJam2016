@@ -27,6 +27,8 @@ public class EnemyTank : MonoBehaviour {
 
 	public float life = 2.0f;
 
+	//public GameObject explosion;
+
 	// Use this for initialization
 	void Start () {
 //		if (startingPoint != null)
@@ -132,6 +134,8 @@ public class EnemyTank : MonoBehaviour {
 	void Kill()
 	{
 		GameController.instance.playerSpecialEnergy += 1.0f;
+		gameObject.transform.GetChild(1).gameObject.SetActive(true);
+		gameObject.transform.GetChild(1).gameObject.transform.SetParent(null);
 		Destroy(this.gameObject);
 	}
 }

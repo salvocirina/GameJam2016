@@ -85,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &109714
 GameObject:
   m_ObjectHideFlags: 1
@@ -1721,9 +1721,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1000
   damage: 1000
-  explosionPrefab: {fileID: 182260, guid: 1028c91c2eb22a5469519ac0b4e6f652, type: 2}
+  explosionPrefab: {fileID: 114826, guid: b5a5be71700968342bcdb308743c5c25, type: 2}
   diffX: 0
-  diffZ: 110
+  diffZ: 130
   exactY: 130
 --- !u!114 &11485776
 MonoBehaviour:
