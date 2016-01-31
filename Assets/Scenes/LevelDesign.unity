@@ -4773,7 +4773,7 @@ Transform:
   - {fileID: 607525809}
   - {fileID: 157137333}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
 --- !u!1 &489122732
 GameObject:
   m_ObjectHideFlags: 0
@@ -13265,7 +13265,7 @@ Transform:
   - {fileID: 2032370182}
   - {fileID: 423042526}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
 --- !u!1 &1371985581
 GameObject:
   m_ObjectHideFlags: 0
@@ -14070,6 +14070,7 @@ GameObject:
   - 33: {fileID: 1448178905}
   - 23: {fileID: 1448178904}
   - 65: {fileID: 1448178906}
+  - 114: {fileID: 1448178907}
   m_Layer: 0
   m_Name: shield
   m_TagString: Untagged
@@ -14132,8 +14133,19 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.70000005, y: 3.5, z: 1}
+  m_Size: {x: 3.04999995, y: 5.07999992, z: 1}
   m_Center: {x: 0, y: -.129999995, z: .25999999}
+--- !u!114 &1448178907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448178902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7878189e0dbef5741b3bcc250ba5c826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1452237506
 GameObject:
   m_ObjectHideFlags: 0
@@ -14427,6 +14439,14 @@ Prefab:
       propertyPath: inGameUI
       value: 
       objectReference: {fileID: 990880592}
+    - target: {fileID: 127306, guid: 4b11539250c74a94dbf1f977fba85fec, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 106278, guid: 4b11539250c74a94dbf1f977fba85fec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b11539250c74a94dbf1f977fba85fec, type: 2}
   m_IsPrefabParent: 0

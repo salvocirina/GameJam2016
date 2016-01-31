@@ -42,16 +42,22 @@ public class GameController : MonoBehaviour {
 
 	public bool automaticSpecialAttackActivation = false;
 
+
+
 	bool canUseSpecialPower = false;
 
 	void Awake() {
 		instance = this;
+
+		GameObject choicesGo = GameObject.FindGameObjectWithTag("Choices");
+		choices = choicesGo.GetComponent<Choices>();
 	}
 	// Use this for initialization
 	void Start () {
 		maxPlayerLife = playerLife;
 		GlowSprite.gameObject.SetActive(false);
 		SpecialButtonImage.gameObject.SetActive(false);
+	
 	}
 	
 	// Update is called once per frame

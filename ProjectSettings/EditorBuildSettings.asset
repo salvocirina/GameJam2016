@@ -10,4 +10,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChoiceScene.unity
   - enabled: 1
-    path: Assets/Scenes/Corrado_01.unity
+    path: Assets/Scenes/LevelDesign.unity

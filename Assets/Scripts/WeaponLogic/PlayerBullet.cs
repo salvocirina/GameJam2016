@@ -9,6 +9,7 @@ public class PlayerBullet : MonoBehaviour {
 		GetComponent<SphereCollider>().enabled = false;
 	}
 
+
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Tank")

@@ -16,10 +16,12 @@ public class Shield : MonoBehaviour {
 	
 	}
 
-//	void OnCollisionEnter(Collision other) {
-//		if(other.gameObject.tag == "Bullet") {
-//			if(!InputController.instance.canDeflect) {
-//				Destroy(other.gameObject);
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.tag == "Bullet") {
+
+				Destroy(other.gameObject);
+		}
+	}
 //			} else if(InputController.instance.canDeflect) {
 //				Vector3 collisionPoint = other.contacts[0].point;
 //				collisionPoint.y = 0;

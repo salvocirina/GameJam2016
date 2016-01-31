@@ -56,6 +56,8 @@ public class InputController : MonoBehaviour {
 	private bool run;
 
 	public Animator anim;
+
+	Choices choices;
 //	public string veritcalAimGatlinAxis;
 
 	void Awake() {
