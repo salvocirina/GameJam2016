@@ -337,7 +337,7 @@ MonoBehaviour:
   shootingRate: .800000012
   playerDistanceToShoot: 240
   startRotationTime: 0
-  life: 30
+  life: 100
   helicopterHeight: 30
 --- !u!1001 &100100000
 Prefab:
@@ -369,6 +369,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: moveSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: life
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

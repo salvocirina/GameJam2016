@@ -7,6 +7,7 @@ public class EnemyTank : MonoBehaviour {
 
 	GameObject player;
 
+
 	public Transform startingPoint;
 	Vector3 startingPointV3;
 	public Vector3 endingPoint;
@@ -37,6 +38,7 @@ public class EnemyTank : MonoBehaviour {
 //				startingPointV3 = startingPoint.transform.position;
 //			transform.position = startingPointV3;
 //		}
+
 
 		player = GameObject.FindGameObjectWithTag("Player");
 	}

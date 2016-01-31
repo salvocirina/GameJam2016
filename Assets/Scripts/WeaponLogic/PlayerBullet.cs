@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerBullet : MonoBehaviour {
 
+	public bool bigBullet;
 
 	void Start() {
 
@@ -53,12 +54,11 @@ public class PlayerBullet : MonoBehaviour {
 
 	void Autodestroy()
 	{
-		GameObject childGo = transform.GetChild(0).gameObject;
-		if (childGo != null)
-		{
+		if(bigBullet) {
+			GameObject childGo = transform.GetChild(0).gameObject;
 			childGo.SetActive(true);
 			childGo.transform.SetParent(null);
-		}
+		} 
 
 		Destroy(this.gameObject,.3f);
 	}
