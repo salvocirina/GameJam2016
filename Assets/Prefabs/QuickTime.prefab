@@ -1723,8 +1723,8 @@ MonoBehaviour:
   damage: 1000
   explosionPrefab: {fileID: 182260, guid: 1028c91c2eb22a5469519ac0b4e6f652, type: 2}
   diffX: 0
-  diffZ: 116
-  exactY: 92
+  diffZ: 110
+  exactY: 130
 --- !u!114 &11485776
 MonoBehaviour:
   m_ObjectHideFlags: 1

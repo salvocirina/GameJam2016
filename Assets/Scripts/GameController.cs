@@ -27,14 +27,22 @@ public class GameController : MonoBehaviour {
 	bool canRegen = true;
 
 	public Slider lifeSlider;
+	public Slider specialEnergySlider;
 	public Slider energySlider;
 
 	public Image LifeSprite;
 
 	public Image GlowSprite;
 
+	public Image SpecialButtonImage;
+
 	public static GameController instance;
 
+	public QuickTimeController quickTimeController;
+
+	public bool automaticSpecialAttackActivation = false;
+
+	bool canUseSpecialPower = false;
 
 	void Awake() {
 		instance = this;
@@ -43,6 +51,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		maxPlayerLife = playerLife;
 		GlowSprite.gameObject.SetActive(false);
+		SpecialButtonImage.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -53,6 +62,8 @@ public class GameController : MonoBehaviour {
 
 		lifeSlider.value = playerLife; 
 		energySlider.value = energy;
+
+		specialEnergySlider.value = playerSpecialEnergy;
 
 		if(playerLife <= 0) {
 
@@ -75,14 +86,32 @@ public class GameController : MonoBehaviour {
 			LifeSprite.color = new Color32(255 , 0 , 0 , 255);
 		}
 
-		if(playerSpecialEnergy == maxPlayerSpecialEnergy) {
+		if(playerSpecialEnergy >= maxPlayerSpecialEnergy) {
 			GlowSprite.gameObject.SetActive(true);
-			Debug.Log("Corrado Scelgo te!");
-			playerSpecialEnergy = 0.0f;
+			SpecialButtonImage.gameObject.SetActive(true);
+
+			canUseSpecialPower = true;
+
+			//Debug.Log("Corrado Scelgo te!");
+
+			if (automaticSpecialAttackActivation)
+			{
+				if (quickTimeController != null)
+					quickTimeController.BeginQuickTime();
+	
+				playerSpecialEnergy = 0.0f;
+			}
+//			if (quickTimeController != null)
+//				quickTimeController.BeginQuickTime();
+
+//			playerSpecialEnergy = 0.0f;
 		}
 
 		if(canRegen && energy <= 100.0f)
 			StartCoroutine(RegenEnergy());
+
+		if (!automaticSpecialAttackActivation)
+			SpecialPowerHandle();
 	}
 
 	IEnumerator RegenEnergy(){
@@ -93,6 +122,27 @@ public class GameController : MonoBehaviour {
 			energy = 100.0f;
 		StopAllCoroutines();
 	
+	}
+
+	void SpecialPowerHandle()
+	{
+
+		if (canUseSpecialPower)
+		{
+			bool buttonPressed = (GetButtonDown(0, "A") || GetButtonDown(1, "A") || GetButtonDown(2, "A") || GetButtonDown(3, "A"));
+			if (buttonPressed)
+			{
+				canUseSpecialPower = false;
+
+				playerSpecialEnergy = 0.0f;
+
+				GlowSprite.gameObject.SetActive(false);
+				SpecialButtonImage.gameObject.SetActive(false);
+
+				if (quickTimeController != null)
+					quickTimeController.BeginQuickTime();
+			}
+		}
 	}
 
 	void ReEnableEngine(){
@@ -117,5 +167,10 @@ public class GameController : MonoBehaviour {
 			playerLife -= 20f;
 		}
 
+	}
+
+	bool GetButtonDown(int player, string name) 
+	{
+		return Rewired.ReInput.players.GetPlayer(player).GetButtonDown(name);
 	}
 }

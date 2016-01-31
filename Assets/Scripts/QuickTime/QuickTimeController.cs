@@ -164,6 +164,11 @@ public class QuickTimeController : MonoBehaviour {
 
 	}
 
+	public void BeginQuickTime()
+	{
+		StartCoroutine(StartQuickTime());
+	}
+
 	IEnumerator StartQuickTime()
 	{
 		ended = false;

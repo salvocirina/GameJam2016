@@ -31,6 +31,17 @@ public class PlayerBullet : MonoBehaviour {
 			
 			Autodestroy();
 		}
+
+		if (other.gameObject.tag == "Tower")
+		{
+			Tower tower = other.gameObject.GetComponent<Tower>();
+			if (tower != null) {
+				
+				tower.Hit(1.0f);
+			}
+			
+			Autodestroy();
+		}
 	}
 	
 	void Autodestroy()
