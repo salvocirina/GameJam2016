@@ -25,6 +25,8 @@ public class ChoiceScene : MonoBehaviour {
 
 	bool started = false;
 
+	public AudioSource source;
+
 	void Start()
 	{
 		text.enabled = false;
@@ -40,6 +42,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[0] = true;
 				movementsSprite.color = colors[0];
 				hasChosen[0] = true;
+				source.Play();
 			}
 
 			if (!hasChosen[1] && GetButtonDown(1, "A") && !tastoScelto[0])
@@ -48,6 +51,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[0] = true;
 				movementsSprite.color = colors[1];
 				hasChosen[1] = true;
+				source.Play();
 			}
 
 			if (!hasChosen[2] && GetButtonDown(2, "A") && !tastoScelto[0])
@@ -56,6 +60,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[0] = true;
 				movementsSprite.color = colors[2];
 				hasChosen[2] = true;
+				source.Play();
 			}
 
 			if (!hasChosen[3] && GetButtonDown(3, "A") && !tastoScelto[0])
@@ -64,6 +69,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[0] = true;
 				movementsSprite.color = colors[3];
 				hasChosen[3] = true;
+				source.Play();
 			}
 
 
@@ -75,6 +81,7 @@ public class ChoiceScene : MonoBehaviour {
 				shieldSprite.color = colors[0];
 				bodySprite.color = colors[0];
 				hasChosen[0] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[1] && GetButtonDown(1, "B") && !tastoScelto[1])
@@ -84,6 +91,7 @@ public class ChoiceScene : MonoBehaviour {
 				shieldSprite.color = colors[1];
 				bodySprite.color = colors[1];
 				hasChosen[1] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[2] && GetButtonDown(2, "B") && !tastoScelto[1])
@@ -93,6 +101,7 @@ public class ChoiceScene : MonoBehaviour {
 				shieldSprite.color = colors[2];
 				bodySprite.color = colors[2];
 				hasChosen[2] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[3] && GetButtonDown(3, "B") && !tastoScelto[1])
@@ -102,6 +111,7 @@ public class ChoiceScene : MonoBehaviour {
 				shieldSprite.color = colors[3];
 				bodySprite.color = colors[3];
 				hasChosen[3] = true;
+				source.Play();
 			}
 
 
@@ -112,6 +122,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[2] = true;
 				gunSprite.color = colors[0];
 				hasChosen[0] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[1] && GetButtonDown(1, "X") && !tastoScelto[2])
@@ -120,6 +131,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[2] = true;
 				gunSprite.color = colors[1];
 				hasChosen[1] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[2] && GetButtonDown(2, "X") && !tastoScelto[2])
@@ -128,6 +140,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[2] = true;
 				gunSprite.color = colors[2];
 				hasChosen[2] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[3] && GetButtonDown(3, "X") && !tastoScelto[2])
@@ -136,6 +149,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[2] = true;
 				gunSprite.color = colors[3];
 				hasChosen[3] = true;
+				source.Play();
 			}
 
 
@@ -146,6 +160,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[3] = true;
 				cannonSprite.color = colors[0];
 				hasChosen[0] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[1] && GetButtonDown(1, "Y") && !tastoScelto[3])
@@ -154,6 +169,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[3] = true;
 				cannonSprite.color = colors[1];
 				hasChosen[1] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[2] && GetButtonDown(2, "Y") && !tastoScelto[3])
@@ -162,6 +178,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[3] = true;
 				cannonSprite.color = colors[2];
 				hasChosen[2] = true;
+				source.Play();
 			}
 			
 			if (!hasChosen[3] && GetButtonDown(3, "Y") && !tastoScelto[3])
@@ -170,6 +187,7 @@ public class ChoiceScene : MonoBehaviour {
 				tastoScelto[3] = true;
 				cannonSprite.color = colors[3];
 				hasChosen[3] = true;
+				source.Play();
 			}
 		}
 
@@ -213,4 +231,6 @@ public class ChoiceScene : MonoBehaviour {
 		yield return new WaitForSeconds(timerMax);
 		Application.LoadLevel(2);
 	}
+
+
 }
