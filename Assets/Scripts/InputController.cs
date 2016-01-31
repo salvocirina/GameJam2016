@@ -47,10 +47,12 @@ public class InputController : MonoBehaviour {
 
 	public bool disable;
 	private bool shieldActive;
+
+	public Animator anim;
 //	public string veritcalAimGatlinAxis;
 
 	void Awake() {
-
+		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody>();
 		instance = this;
 	}

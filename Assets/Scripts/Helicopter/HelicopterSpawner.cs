@@ -45,6 +45,7 @@ public class HelicopterSpawner : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		spawn = true;
+		if(other.gameObject.tag == "Player")
+			spawn = true;
 	}
 }

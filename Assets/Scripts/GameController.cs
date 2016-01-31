@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -13,14 +14,24 @@ public class GameController : MonoBehaviour {
 
 	public GameObject player;
 
+
+
 	public float playerLife = 400.0f;
 	private float maxPlayerLife;
+
+	public float playerSpecialEnergy = 0.0f;
+	private float maxPlayerSpecialEnergy = 100.0f;
 
 	public float energy = 100.0f;
 	public float energyRegen = 20.0f;
 	bool canRegen = true;
 
-	public UnityEngine.UI.Slider lifeSlider;
+	public Slider lifeSlider;
+	public Slider energySlider;
+
+	public Image LifeSprite;
+
+	public Image GlowSprite;
 
 	public static GameController instance;
 
@@ -31,6 +42,7 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		maxPlayerLife = playerLife;
+		GlowSprite.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -40,6 +52,12 @@ public class GameController : MonoBehaviour {
 			playerLife = maxPlayerLife;
 
 		lifeSlider.value = playerLife; 
+		energySlider.value = energy;
+
+		if(playerLife <= 0) {
+
+//			player.GetComponent<InputController>().disable = true):
+		}
 
 		if(energy <= 0) {
 			player.GetComponent<InputController>().disable = true;
@@ -47,8 +65,24 @@ public class GameController : MonoBehaviour {
 			energy=0;
 			Invoke("ReEnableEngine",1);
 		}
+
+		if(playerLife >= 300) {
+			LifeSprite.color = new Color32(0 , 255 , 0 , 255);
+		} 
+			else if(playerLife < 300 && playerLife >= 150) {
+			LifeSprite.color = new Color32(255 , 255 , 0 , 255);
+		} else if(playerLife < 150 && playerLife >= 0) {
+			LifeSprite.color = new Color32(255 , 0 , 0 , 255);
+		}
+
+		if(playerSpecialEnergy == maxPlayerSpecialEnergy) {
+			GlowSprite.gameObject.SetActive(true);
+			Debug.Log("Corrado Scelgo te!");
+			playerSpecialEnergy = 0.0f;
+		}
+
 		if(canRegen && energy <= 100.0f)
-		StartCoroutine(RegenEnergy());
+			StartCoroutine(RegenEnergy());
 	}
 
 	IEnumerator RegenEnergy(){

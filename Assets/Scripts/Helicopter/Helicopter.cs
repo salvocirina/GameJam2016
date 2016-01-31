@@ -92,6 +92,7 @@ public class Helicopter : MonoBehaviour {
 
 	void Kill()
 	{
+		GameController.instance.playerSpecialEnergy += 1.0f;
 		Destroy(this.gameObject);
 	}
 
@@ -108,7 +109,6 @@ public class Helicopter : MonoBehaviour {
 	}
 
 	void OnTriggerEnter( Collider other) {
-		Debug.Log("esplosione");
 		if(other.gameObject.tag == "Bullet")
 			Hit (1);
 	}

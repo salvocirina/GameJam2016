@@ -129,6 +129,7 @@ public class EnemyTank : MonoBehaviour {
 
 	void Kill()
 	{
+		GameController.instance.playerSpecialEnergy += 1.0f;
 		Destroy(this.gameObject);
 	}
 }
