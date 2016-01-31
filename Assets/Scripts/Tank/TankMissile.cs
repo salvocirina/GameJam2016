@@ -13,6 +13,8 @@ public class TankMissile : MonoBehaviour {
 	GameObject gameController;
 	GameController controllerScript;
 
+	public GameController.HitType damage = GameController.HitType.Weak;
+
 	// Use this for initialization
 	void Start () {
 		objRigidbody = GetComponent<Rigidbody>();
