@@ -53,6 +53,13 @@ public class QuickTimeController : MonoBehaviour {
 
 	float stoppingTime;
 
+	//public UnityEngine.UI.Image successImage;
+	public GameObject successImage;
+
+	bool showSuccess = false;
+
+	//if (
+
 	// Use this for initialization
 	void Start () {
 //		beginningTime = Time.time;
@@ -85,6 +92,8 @@ public class QuickTimeController : MonoBehaviour {
 
 		if (started)
 			HandleQuickTime();
+
+		HandleSuccessImage();
 	}
 
 	void GenerateElements()
@@ -171,6 +180,8 @@ public class QuickTimeController : MonoBehaviour {
 
 	IEnumerator StartQuickTime()
 	{
+		successImage.SetActive(false);
+
 		ended = false;
 
 		SwitchUI(false);
@@ -262,6 +273,7 @@ public class QuickTimeController : MonoBehaviour {
 		}
 
 		if (finalCorrect)
+			//StartCoroutine( WinConsequences());
 			WinConsequences();
 		else
 			LoseConsequences();
@@ -274,7 +286,7 @@ public class QuickTimeController : MonoBehaviour {
 
 	void WinConsequences()
 	{
-		Time.timeScale = 1.0f;
+		Debug.Log("Inizio Vinto quick time event");
 
 		//EnableUI(true);
 		//SwitchCameras(true);
@@ -283,12 +295,39 @@ public class QuickTimeController : MonoBehaviour {
 			if (quickTimeSingles[i] != null)
 				quickTimeSingles[i].Active(false);
 	    }
+
+		successImage.SetActive(true);
+
+		//showSuccess = true;
+
+		//yield return new WaitForSeconds(3.0f);
+
+		Invoke("LateCons", 1.0f);
+	}
+
+	void LateCons()
+	{
+		//Time.timeScale = 1.0f;
+		
 		SwitchUI(true);
 		Debug.Log("Vinto quick time event");
-
+		
 		if (hugeExplosion != null)
 			hugeExplosion.Explode();
+		
+		//showSuccess = false;
+		
+
 	}
+
+	void HandleSuccessImage()
+	{
+//		if (showSuccess)
+//		{
+//			successImage.fillAmount += Time.unscaledDeltaTime * 0.5f;
+//		}
+	}
+
 
 	void LoseConsequences()
 	{
