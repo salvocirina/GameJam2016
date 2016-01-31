@@ -28,18 +28,30 @@ public class HugeExplosion : MonoBehaviour {
 
 	public void Explode()
 	{
-		RaycastHit[] hits = Physics.SphereCastAll(player.transform.position, radius, player.transform.forward);
+		Debug.Log ("explosion");
 
+		StartCoroutine(ExpodeDelay());
+
+
+
+	}
+
+	IEnumerator ExpodeDelay()
+	{
+		yield return new WaitForSeconds(0.5f);
+
+		RaycastHit[] hits = Physics.SphereCastAll(player.transform.position, radius, player.transform.forward);
+		
 		for (int i = 0; i < hits.Length; i++)
 		{
-
+			
 			if (hits[i].transform.gameObject.tag == "Helicopter")
 			{
 				Helicopter heli = hits[i].transform.gameObject.GetComponent<Helicopter>();
 				if (heli != null)
 					heli.Hit(damage);
 			}
-
+			
 			if (hits[i].transform.gameObject.tag == "Tank")
 			{
 				EnemyTank tank = hits[i].transform.gameObject.GetComponent<EnemyTank>();
@@ -47,12 +59,11 @@ public class HugeExplosion : MonoBehaviour {
 					tank.Hit(damage);
 			}
 		}
-
+		
 		if (explosionPrefab != null)
 		{
 			Vector3 position = new Vector3(Camera.main.transform.position.x + diffX, exactY, Camera.main.transform.position.z + diffZ);
 			Instantiate(explosionPrefab, position, Quaternion.identity);
 		}
-
 	}
 }
