@@ -44,9 +44,22 @@ public class PlayerBullet : MonoBehaviour {
 			Autodestroy();
 		}
 	}
-	
+
+	void Update()
+	{
+		if (Input.GetKeyUp(KeyCode.P))
+			Autodestroy();
+	}
+
 	void Autodestroy()
 	{
+		GameObject childGo = transform.GetChild(0).gameObject;
+		if (childGo != null)
+		{
+			childGo.SetActive(true);
+			childGo.transform.SetParent(null);
+		}
+
 		Destroy(this.gameObject,.3f);
 	}
 
