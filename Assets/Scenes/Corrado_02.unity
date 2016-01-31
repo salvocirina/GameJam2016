@@ -2995,7 +2995,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 406534, guid: 4b11539250c74a94dbf1f977fba85fec, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11427440, guid: 4b11539250c74a94dbf1f977fba85fec, type: 2}
       propertyPath: inGameUI
