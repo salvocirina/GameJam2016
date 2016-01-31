@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c2127cfd2dbac4fa7209c5d362618f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 124994}
   startingPoint: {fileID: 0}
   endingPoint: {x: 0, y: 0, z: 0}
   movingSpeed: 20
@@ -3632,6 +3633,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 124994}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181314}

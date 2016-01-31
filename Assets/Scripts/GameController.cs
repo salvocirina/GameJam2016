@@ -158,8 +158,10 @@ public class GameController : MonoBehaviour {
 				GlowSprite.gameObject.SetActive(false);
 				SpecialButtonImage.gameObject.SetActive(false);
 
-				if (quickTimeController != null)
+				if (quickTimeController != null) {
+					quickTimeController.gameObject.SetActive(true);
 					quickTimeController.BeginQuickTime();
+				}
 			}
 		}
 	}
