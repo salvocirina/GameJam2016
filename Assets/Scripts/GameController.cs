@@ -49,8 +49,7 @@ public class GameController : MonoBehaviour {
 	void Awake() {
 		instance = this;
 
-		GameObject choicesGo = GameObject.FindGameObjectWithTag("Choices");
-		choices = choicesGo.GetComponent<Choices>();
+
 	}
 	// Use this for initialization
 	void Start () {

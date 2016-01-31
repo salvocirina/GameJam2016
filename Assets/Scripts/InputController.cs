@@ -58,12 +58,20 @@ public class InputController : MonoBehaviour {
 	public Animator anim;
 
 	Choices choices;
+
+	private int movement;
+	private int gun ; 
+	private int cannon;
+	private int shield;
 //	public string veritcalAimGatlinAxis;
 
 	void Awake() {
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody>();
 		instance = this;
+
+		GameObject choicesGo = GameObject.FindGameObjectWithTag("Choices");
+		choices = choicesGo.GetComponent<Choices>();
 	}
 
 	void Start () {
@@ -75,6 +83,15 @@ public class InputController : MonoBehaviour {
 		disable = false;
 
 		transform.GetChild(2).GetChild(0).GetChild(0).gameObject.SetActive(false);
+
+		movement = choices.movements;
+
+		gun = choices.gun;
+
+		cannon = choices.cannon;
+
+		shield = choices.shield;
+
 
 //		horizontalAxis += gameObject.name;
 //		veritcalAxis += gameObject.name;
@@ -101,9 +118,9 @@ public class InputController : MonoBehaviour {
 
 			anim.SetBool("Dead" , GameController.instance.playerLife <= 0);
 
-			if(GetAxis(0,"ShootIper") > 0.1f){
-				float moveH = GetAxis(0,"LeftRotationH") * runSpeed;
-				float moveV = GetAxis(0,"LeftRotationV") * runSpeed;
+			if(GetAxis(movement	,"ShootIper") > 0.1f){
+				float moveH = GetAxis(movement,"LeftRotationH") * runSpeed;
+				float moveV = GetAxis(movement,"LeftRotationV") * runSpeed;
 				anim.SetFloat("SpeedH" , moveH);
 				anim.SetFloat("SpeedV" , moveV);
 				Move(moveH, moveV);
@@ -113,8 +130,8 @@ public class InputController : MonoBehaviour {
 
 
 			} else {
-				float moveH = GetAxis(0,"LeftRotationH") * movSpeed;
-				float moveV = GetAxis(0,"LeftRotationV") * movSpeed;
+				float moveH = GetAxis(movement,"LeftRotationH") * movSpeed;
+				float moveV = GetAxis(movement,"LeftRotationV") * movSpeed;
 				anim.SetFloat("SpeedH" , moveH);
 				anim.SetFloat("SpeedV" , moveV);
 				run = false;
@@ -125,51 +142,51 @@ public class InputController : MonoBehaviour {
 
 			}
 
-			float aimH = GetAxis(0,"RightRotationH") * rotSpeed;
-			float aimV = GetAxis(0,"RightRotationV") * rotSpeed;
+			float aimH = GetAxis(movement,"RightRotationH") * rotSpeed;
+			float aimV = GetAxis(movement,"RightRotationV") * rotSpeed;
 			Aim(aimH, aimV);
 
-			float aimGatlinH = GetAxis(1, "RightRotationH") * rotGatlinSpeed;
+			float aimGatlinH = GetAxis(gun, "RightRotationH") * rotGatlinSpeed;
 			RotateGatlinGun(aimGatlinH);
 
-			if(GetAxis(1,"Shoot") > 0.1f) {
+			if(GetAxis(gun,"Shoot") > 0.1f) {
 				if(((Time.time - lastGatlinShoot) > gatlingShootingRate)) {
 					lastGatlinShoot = Time.time;
 					GatlinShoot();
 				}
-			} else if(GetAxis(1,"ShootIper") > 0.1f) {
+			} else if(GetAxis(gun,"ShootIper") > 0.1f) {
 				if(((Time.time - lastGatlinShoot) > gatlingShootingRate)) {
 					lastGatlinShoot = Time.time;
 					IperGatlinShoot();
 				}
 			}
 
-			float shieldH = GetAxis(2, "RightRotationH") * rotShieldSpeed;
-			float shieldV = GetAxis(2,"RightRotationV") * rotShieldSpeed;
+			float shieldH = GetAxis(shield, "RightRotationH") * rotShieldSpeed;
+			float shieldV = GetAxis(shield,"RightRotationV") * rotShieldSpeed;
 			Shield(shieldH, shieldV);
 
-			if(GetButtonDown(2, "Shoot")) {
+			if(GetButtonDown(shield, "Shoot")) {
 				EnableShield();
 			}
 
 			if(shieldActive)
 				GameController.instance.energy -= 1.0f*Time.deltaTime;
 
-			if(GetButtonDown(2,"ShootIper")) {
+			if(GetButtonDown(shield,"ShootIper")) {
 				GameController.instance.playerLife += 50.0f;
 				GameController.instance.energy -= 10.0f;
 			}
 
-			float rocketH = GetAxis(3, "RightRotationH") * rotRocketSpeed;
-			float rocketV = GetAxis(3,"RightRotationV") * rotRocketSpeed;
+			float rocketH = GetAxis(cannon, "RightRotationH") * rotRocketSpeed;
+			float rocketV = GetAxis(cannon,"RightRotationV") * rotRocketSpeed;
 			RocketsAim(rocketH, rocketV);
 
-			if(GetAxis(3,"Shoot") > 0.1f) {
+			if(GetAxis(cannon,"Shoot") > 0.1f) {
 				if(((Time.time - lastRocketShoot) > rocketShootingRate)) {
 					lastRocketShoot = Time.time;
 					RocketShoot();
 				}
-			} else if(GetAxis(3,"ShootIper") > 0.1f) {
+			} else if(GetAxis(cannon,"ShootIper") > 0.1f) {
 				if(((Time.time - lastRocketShoot) > improvedrocketShootingRate)) {
 					lastRocketShoot = Time.time;
 					IperRocketShoot();
