@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418766}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - 4: {fileID: 454444}
   - 33: {fileID: 3355144}
   - 23: {fileID: 2354436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DX_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - 54: {fileID: 5461624}
   - 65: {fileID: 6516526}
   - 114: {fileID: 11425554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemy_Bb
   m_TagString: Helicopter
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - 4: {fileID: 430496}
   - 33: {fileID: 3332058}
   - 23: {fileID: 2379694}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemy_Bb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - 4: {fileID: 452830}
   - 33: {fileID: 3361514}
   - 23: {fileID: 2356448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SX_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,13 +327,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 80
-  moveSpeed: 40
+  moveSpeed: 20
   rotationSpeed: 50
+  isStarDestroyer: 1
   missilePrefab: {fileID: 196334, guid: 90aaaac2cee993f4eb0ef7c114a72174, type: 2}
   point:
   - {fileID: 106318}
   - {fileID: 155540}
-  shootingRate: .200000003
+  shootingRate: .800000012
+  playerDistanceToShoot: 240
   startRotationTime: 0
   life: 30
   helicopterHeight: 30
@@ -347,6 +349,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Helicopter
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playerDistanceToShoot
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isStarDestroyer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shootingRate
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
