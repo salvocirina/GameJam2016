@@ -63,7 +63,8 @@ public class GameController : MonoBehaviour {
 		lifeSlider.value = playerLife; 
 		energySlider.value = energy;
 
-		specialEnergySlider.value = playerSpecialEnergy;
+		if (specialEnergySlider != null)
+			specialEnergySlider.value = playerSpecialEnergy;
 
 		if(playerLife <= 0) {
 
@@ -122,6 +123,11 @@ public class GameController : MonoBehaviour {
 			energy = 100.0f;
 		StopAllCoroutines();
 	
+	}
+
+	public void SetEnergy(float _energy)
+	{
+		energy = _energy;
 	}
 
 	void SpecialPowerHandle()
