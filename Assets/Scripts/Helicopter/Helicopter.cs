@@ -15,7 +15,7 @@ public class Helicopter : MonoBehaviour {
 	
 	public GameObject[] point;
 	
-	public float shootingRate = 0.5f;
+	public float shootingRate = 1.5f;
 	
 	float lastShoot = 0;
 

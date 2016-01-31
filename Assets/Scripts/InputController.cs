@@ -95,11 +95,15 @@ public class InputController : MonoBehaviour {
 	
 		if(!disable) {
 
-			anim.SetBool("Run" , run);
+			anim.SetBool("Run" , run); 
+
+			anim.SetBool("Dead" , GameController.instance.playerLife <= 0);
 
 			if(GetAxis(0,"ShootIper") > 0.1f){
 				float moveH = GetAxis(0,"LeftRotationH") * runSpeed;
 				float moveV = GetAxis(0,"LeftRotationV") * runSpeed;
+				anim.SetFloat("SpeedH" , moveH);
+				anim.SetFloat("SpeedV" , moveV);
 				Move(moveH, moveV);
 				run = true;
 
@@ -109,6 +113,8 @@ public class InputController : MonoBehaviour {
 			} else {
 				float moveH = GetAxis(0,"LeftRotationH") * movSpeed;
 				float moveV = GetAxis(0,"LeftRotationV") * movSpeed;
+				anim.SetFloat("SpeedH" , moveH);
+				anim.SetFloat("SpeedV" , moveV);
 				run = false;
 
 				Move(moveH, moveV);

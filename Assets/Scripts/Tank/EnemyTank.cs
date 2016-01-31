@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EnemyTank : MonoBehaviour {
@@ -18,7 +18,7 @@ public class EnemyTank : MonoBehaviour {
 
 	public GameObject point;
 
-	public float shootingRate = 0.5f;
+	public float shootingRate = 1f;
 
 	float lastShoot = 0;
 
@@ -47,12 +47,12 @@ public class EnemyTank : MonoBehaviour {
 			this.transform.forward = -direction;
 		}
 
-		if (!arrived && endingPoint != null){
-			transform.position = Vector3.MoveTowards(transform.position, endingPoint, Time.deltaTime * movingSpeed);
-
-			if (transform.position == endingPoint)
-				arrived = true;
-		}
+//		if (!arrived && endingPoint != null){
+//			transform.position = Vector3.MoveTowards(transform.position, endingPoint, Time.deltaTime * movingSpeed);
+//
+//			if (transform.position == endingPoint)
+//				arrived = true;
+//		}
 
 //		RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.position - player.transform.position);
 //		for (int i = 0; i < hits.Length; i++)

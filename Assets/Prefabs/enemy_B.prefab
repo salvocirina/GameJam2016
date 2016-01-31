@@ -184,7 +184,7 @@ MonoBehaviour:
   point:
   - {fileID: 198340}
   - {fileID: 118718}
-  shootingRate: .200000003
+  shootingRate: 1
   startRotationTime: 0
   life: 2
   helicopterHeight: 30
@@ -217,6 +217,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shootingRate
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
