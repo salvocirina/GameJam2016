@@ -178,11 +178,13 @@ MonoBehaviour:
   distance: 80
   moveSpeed: 40
   rotationSpeed: 50
+  isStarDestroyer: 0
   missilePrefab: {fileID: 196334, guid: bacad3fe64156f84f9ef7f72bc536f6c, type: 2}
   point:
   - {fileID: 198340}
   - {fileID: 118718}
   shootingRate: 1
+  playerDistanceToShoot: 250
   startRotationTime: 0
   life: 2
   helicopterHeight: 30
@@ -220,6 +222,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: shootingRate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playerDistanceToShoot
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

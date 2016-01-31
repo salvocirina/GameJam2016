@@ -11,11 +11,15 @@ public class Helicopter : MonoBehaviour {
 
 	public float rotationSpeed = 10.0f;
 
+	public bool isStarDestroyer;
+
 	public GameObject missilePrefab;
 	
 	public GameObject[] point;
 	
 	public float shootingRate = 1.5f;
+
+	public float playerDistanceToShoot =6-0f;
 	
 	float lastShoot = 0;
 
@@ -37,8 +41,11 @@ public class Helicopter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 objPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-		if (!distanceReached)
+
+
+		if(PlayerNearEvaluation())
+		{Vector3 objPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+		 if (!distanceReached)
 		{
 
 //			if (Vector3.Distance(transform.position, objPosition) > distance)
@@ -54,9 +61,20 @@ public class Helicopter : MonoBehaviour {
 
 		if (distanceReached)
 		{
-
-			if ((Time.time - startTime) > startRotationTime)
+				if (!isStarDestroyer)
+				
+				{
+					if  ((Time.time - startTime) > startRotationTime)
 				transform.RotateAround(player.transform.position, Vector3.up, Time.deltaTime * rotationSpeed);
+				}
+
+				else if (isStarDestroyer)
+				{
+				
+						Vector3 direction = transform.position - player.transform.position;
+						this.transform.forward = -direction;
+
+				}
 
 			if (Vector3.Distance(transform.position, objPosition) > distance)
 				distanceReached = false;
@@ -72,7 +90,7 @@ public class Helicopter : MonoBehaviour {
 		{
 			lastShoot = Time.time;
 			Shoot();
-		}
+			}}
 	}
 
 	void Shoot()
@@ -106,6 +124,17 @@ public class Helicopter : MonoBehaviour {
 	{
 		if (life <= 0.0f)
 			Kill ();
+	}
+
+	bool PlayerNearEvaluation()
+	{
+
+		if ((Vector3.Distance(transform.position, player.transform.position) < playerDistanceToShoot))
+			return true;
+		else
+			return false;
+		Debug.Log (Vector3.Distance(transform.position, player.transform.position));
+
 	}
 
 	void OnTriggerEnter( Collider other) {

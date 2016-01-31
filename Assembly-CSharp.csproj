@@ -108,11 +108,11 @@
      <Compile Include="Assets\Scripts\QuickTime\QuickTimeController.cs" />
      <Compile Include="Assets\Scripts\QuickTime\QuickTimeElement.cs" />
      <Compile Include="Assets\Scripts\QuickTime\QuickTimeSingle.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\Tank\EnemyTank.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\Tank\TankCreator.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\Tank\TankCreatorGroup.cs" />
+     <Compile Include="Assets\Scripts\QuickTime\Tank\TankMissile.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
-     <Compile Include="Assets\Scripts\Tank\EnemyTank.cs" />
-     <Compile Include="Assets\Scripts\Tank\TankCreator.cs" />
-     <Compile Include="Assets\Scripts\Tank\TankCreatorGroup.cs" />
-     <Compile Include="Assets\Scripts\Tank\TankMissile.cs" />
      <Compile Include="Assets\Scripts\Tower.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\Scripts\WeaponLogic\PlayerBullet.cs" />
