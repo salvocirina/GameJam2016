@@ -85,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &109714
 GameObject:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416778}
   m_Layer: 0
-  m_Name: Buttons02
+  m_Name: Buttons03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,7 +596,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 455774}
   m_Layer: 0
-  m_Name: Buttons03
+  m_Name: Buttons02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ Transform:
   - {fileID: 22451988}
   - {fileID: 22498026}
   m_Father: {fileID: 22402964}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &434644
 Transform:
   m_ObjectHideFlags: 1
@@ -791,7 +791,7 @@ Transform:
   - {fileID: 22445980}
   - {fileID: 22458786}
   m_Father: {fileID: 22402964}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!4 &457618
 Transform:
   m_ObjectHideFlags: 1
@@ -1052,17 +1052,17 @@ MonoBehaviour:
   - {fileID: 11448200}
   - {fileID: 11464630}
   player2:
-  - {fileID: 11496524}
-  - {fileID: 11444474}
-  - {fileID: 11425348}
-  - {fileID: 11469494}
-  - {fileID: 11410044}
-  player3:
   - {fileID: 11486240}
   - {fileID: 11439778}
   - {fileID: 11470808}
   - {fileID: 11439586}
   - {fileID: 11427188}
+  player3:
+  - {fileID: 11496524}
+  - {fileID: 11444474}
+  - {fileID: 11425348}
+  - {fileID: 11469494}
+  - {fileID: 11410044}
 --- !u!114 &11413986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2109,8 +2109,8 @@ RectTransform:
   - {fileID: 22433982}
   - {fileID: 435384}
   - {fileID: 471428}
-  - {fileID: 416778}
   - {fileID: 455774}
+  - {fileID: 416778}
   - {fileID: 22477456}
   m_Father: {fileID: 406534}
   m_RootOrder: 1
