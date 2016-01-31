@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: 6f91828671d52444aa1ab0edb8d9060c
+timeCreated: 1454205014
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Character1_Ctrl_ChestEndEffector
+    100002: Character1_Ctrl_ChestOriginEffector
+    100004: Character1_Ctrl_Head
+    100006: Character1_Ctrl_HeadEffector
+    100008: Character1_Ctrl_Hips
+    100010: Character1_Ctrl_LeftArm
+    100012: Character1_Ctrl_LeftElbowEffector
+    100014: Character1_Ctrl_LeftForeArm
+    100016: Character1_Ctrl_LeftHand
+    100018: Character1_Ctrl_LeftHandExtraFinger1
+    100020: Character1_Ctrl_LeftHandExtraFingerEffector
+    100022: Character1_Ctrl_LeftShoulder
+    100024: Character1_Ctrl_LeftShoulderEffector
+    100026: Character1_Ctrl_LeftWristEffector
+    100028: Character1_Ctrl_Neck
+    100030: Character1_Ctrl_Reference
+    100032: Character1_Ctrl_RightArm
+    100034: Character1_Ctrl_RightElbowEffector
+    100036: Character1_Ctrl_RightForeArm
+    100038: Character1_Ctrl_RightHand
+    100040: Character1_Ctrl_RightHandExtraFinger1
+    100042: Character1_Ctrl_RightHandExtraFinger2
+    100044: Character1_Ctrl_RightHandExtraFingerEffector
+    100046: Character1_Ctrl_RightShoulder
+    100048: Character1_Ctrl_RightShoulderEffector
+    100050: Character1_Ctrl_RightWristEffector
+    100052: Character1_Ctrl_Spine
+    100054: Character1_Ctrl_Spine1
+    100056: Character1_Head
+    100058: Character1_Hips
+    100060: Character1_LeftArm
+    100062: Character1_LeftForeArm
+    100064: Character1_LeftHand
+    100066: Character1_LeftHandExtraFinger1
+    100068: Character1_LeftShoulder
+    100070: Character1_Neck
+    100072: Character1_Reference
+    100074: Character1_RightArm
+    100076: Character1_RightForeArm
+    100078: Character1_RightHand
+    100080: Character1_RightHandExtraFinger1
+    100082: Character1_RightHandExtraFinger2
+    100084: Character1_RightShoulder
+    100086: Character1_Spine
+    100088: Character1_Spine1
+    100090: mech_arm_L
+    100092: mech_arm_R
+    100094: mech_base_cannon_L
+    100096: mech_base_cannon_R
+    100098: mech_body
+    100100: mech_cannon_L
+    100102: mech_cannon_R
+    100104: mech_forearm_L
+    100106: mech_forearm_R
+    100108: mech_gun_L
+    100110: mech_gun_R
+    100112: mech_sholder_L
+    100114: mech_shoulder_R
+    100116: //RootNode
+    100118: pasted__group4
+    400000: Character1_Ctrl_ChestEndEffector
+    400002: Character1_Ctrl_ChestOriginEffector
+    400004: Character1_Ctrl_Head
+    400006: Character1_Ctrl_HeadEffector
+    400008: Character1_Ctrl_Hips
+    400010: Character1_Ctrl_LeftArm
+    400012: Character1_Ctrl_LeftElbowEffector
+    400014: Character1_Ctrl_LeftForeArm
+    400016: Character1_Ctrl_LeftHand
+    400018: Character1_Ctrl_LeftHandExtraFinger1
+    400020: Character1_Ctrl_LeftHandExtraFingerEffector
+    400022: Character1_Ctrl_LeftShoulder
+    400024: Character1_Ctrl_LeftShoulderEffector
+    400026: Character1_Ctrl_LeftWristEffector
+    400028: Character1_Ctrl_Neck
+    400030: Character1_Ctrl_Reference
+    400032: Character1_Ctrl_RightArm
+    400034: Character1_Ctrl_RightElbowEffector
+    400036: Character1_Ctrl_RightForeArm
+    400038: Character1_Ctrl_RightHand
+    400040: Character1_Ctrl_RightHandExtraFinger1
+    400042: Character1_Ctrl_RightHandExtraFinger2
+    400044: Character1_Ctrl_RightHandExtraFingerEffector
+    400046: Character1_Ctrl_RightShoulder
+    400048: Character1_Ctrl_RightShoulderEffector
+    400050: Character1_Ctrl_RightWristEffector
+    400052: Character1_Ctrl_Spine
+    400054: Character1_Ctrl_Spine1
+    400056: Character1_Head
+    400058: Character1_Hips
+    400060: Character1_LeftArm
+    400062: Character1_LeftForeArm
+    400064: Character1_LeftHand
+    400066: Character1_LeftHandExtraFinger1
+    400068: Character1_LeftShoulder
+    400070: Character1_Neck
+    400072: Character1_Reference
+    400074: Character1_RightArm
+    400076: Character1_RightForeArm
+    400078: Character1_RightHand
+    400080: Character1_RightHandExtraFinger1
+    400082: Character1_RightHandExtraFinger2
+    400084: Character1_RightShoulder
+    400086: Character1_Spine
+    400088: Character1_Spine1
+    400090: mech_arm_L
+    400092: mech_arm_R
+    400094: mech_base_cannon_L
+    400096: mech_base_cannon_R
+    400098: mech_body
+    400100: mech_cannon_L
+    400102: mech_cannon_R
+    400104: mech_forearm_L
+    400106: mech_forearm_R
+    400108: mech_gun_L
+    400110: mech_gun_R
+    400112: mech_sholder_L
+    400114: mech_shoulder_R
+    400116: //RootNode
+    400118: pasted__group4
+    4300000: mech_base_cannon_L
+    4300002: mech_cannon_L
+    4300004: mech_sholder_L
+    4300006: mech_base_cannon_R
+    4300008: mech_cannon_R
+    4300010: mech_shoulder_R
+    4300012: mech_body
+    4300014: mech_gun_L
+    4300016: mech_gun_R
+    4300018: mech_forearm_L
+    4300020: mech_arm_L
+    4300022: mech_forearm_R
+    4300024: mech_arm_R
+    7400000: UpWalk
+    9500000: //RootNode
+    13700000: mech_arm_L
+    13700002: mech_arm_R
+    13700004: mech_base_cannon_L
+    13700006: mech_base_cannon_R
+    13700008: mech_body
+    13700010: mech_cannon_L
+    13700012: mech_cannon_R
+    13700014: mech_forearm_L
+    13700016: mech_forearm_R
+    13700018: mech_gun_L
+    13700020: mech_gun_R
+    13700022: mech_sholder_L
+    13700024: mech_shoulder_R
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: UpWalk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character1_Ctrl_Reference
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_ChestEndEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_ChestOriginEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_HeadEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm/Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm/Character1_Ctrl_LeftForeArm/Character1_Ctrl_LeftHand
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm/Character1_Ctrl_LeftForeArm/Character1_Ctrl_LeftHand/Character1_Ctrl_LeftHandExtraFinger1
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Neck
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Neck/Character1_Ctrl_Head
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm/Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm/Character1_Ctrl_RightForeArm/Character1_Ctrl_RightHand
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm/Character1_Ctrl_RightForeArm/Character1_Ctrl_RightHand/Character1_Ctrl_RightHandExtraFinger1
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm/Character1_Ctrl_RightForeArm/Character1_Ctrl_RightHand/Character1_Ctrl_RightHandExtraFinger1/Character1_Ctrl_RightHandExtraFinger2
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftElbowEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftHandExtraFingerEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftShoulderEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftWristEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightElbowEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightHandExtraFingerEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightShoulderEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightWristEffector
+        weight: 1
+      - path: Character1_Reference
+        weight: 1
+      - path: Character1_Reference/Character1_Hips
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_LeftShoulder
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_LeftShoulder/Character1_LeftArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandExtraFinger1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Neck
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Neck/Character1_Head
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_RightShoulder
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_RightShoulder/Character1_RightArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandExtraFinger1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandExtraFinger1/Character1_RightHandExtraFinger2
+        weight: 1
+      - path: pasted__group4
+        weight: 1
+      - path: pasted__group4/mech_arm_L
+        weight: 1
+      - path: pasted__group4/mech_arm_R
+        weight: 1
+      - path: pasted__group4/mech_base_cannon_L
+        weight: 1
+      - path: pasted__group4/mech_base_cannon_R
+        weight: 1
+      - path: pasted__group4/mech_body
+        weight: 1
+      - path: pasted__group4/mech_cannon_L
+        weight: 1
+      - path: pasted__group4/mech_cannon_R
+        weight: 1
+      - path: pasted__group4/mech_forearm_L
+        weight: 1
+      - path: pasted__group4/mech_forearm_R
+        weight: 1
+      - path: pasted__group4/mech_gun_L
+        weight: 1
+      - path: pasted__group4/mech_gun_R
+        weight: 1
+      - path: pasted__group4/mech_sholder_L
+        weight: 1
+      - path: pasted__group4/mech_shoulder_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

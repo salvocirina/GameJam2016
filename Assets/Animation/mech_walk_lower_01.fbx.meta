@@ -229,7 +229,7 @@ ModelImporter:
     4300046: mech_finger_R_03
     4300048: mech_finger_R_02
     4300050: mech_finger_R_01
-    7400000: Take 001
+    7400000: Walk
     9500000: //RootNode
     13700000: mech_1
     13700002: mech_arm_L
@@ -278,7 +278,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Walk
       takeName: Take 001
       firstFrame: 1
       lastFrame: 33

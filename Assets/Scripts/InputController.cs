@@ -5,6 +5,12 @@ public class InputController : MonoBehaviour {
 
 	private Rigidbody rb;
 
+	public GameObject body;
+
+	public GameObject[] foreArms;
+
+	public GameObject[] cannons;
+
 	public static InputController instance;
 
 	public float movSpeed = 25.0f;
@@ -47,6 +53,7 @@ public class InputController : MonoBehaviour {
 
 	public bool disable;
 	private bool shieldActive;
+	private bool run;
 
 	public Animator anim;
 //	public string veritcalAimGatlinAxis;
@@ -86,19 +93,24 @@ public class InputController : MonoBehaviour {
 	// Update is called onceper frame
 	void Update () {
 	
-
-
 		if(!disable) {
+
+			anim.SetBool("Run" , run);
+
 			if(GetAxis(0,"ShootIper") > 0.1f){
 				float moveH = GetAxis(0,"LeftRotationH") * runSpeed;
 				float moveV = GetAxis(0,"LeftRotationV") * runSpeed;
 				Move(moveH, moveV);
+				run = true;
+
 				GameController.instance.energy -= 10f*Time.deltaTime;
 
 
 			} else {
 				float moveH = GetAxis(0,"LeftRotationH") * movSpeed;
 				float moveV = GetAxis(0,"LeftRotationV") * movSpeed;
+				run = false;
+
 				Move(moveH, moveV);
 				if(moveH>0||moveV>0)
 					GameController.instance.energy -= 1.0f*Time.deltaTime;
@@ -230,7 +242,7 @@ public class InputController : MonoBehaviour {
 			// rotation of the ship
 			var rotation= Quaternion.LookRotation(targetDir, Vector3.up);
 			transform.GetChild(1).rotation = Quaternion.Slerp(transform.GetChild(1).rotation, rotation, Time.deltaTime * rotSpeed);
-
+			body.transform.rotation = transform.GetChild(1).rotation;
 		}
 	}
 
@@ -253,7 +265,9 @@ public class InputController : MonoBehaviour {
 	void RotateGatlinGun(float yAxis ) {
 
 		transform.GetChild(1).GetChild(0).localEulerAngles = new Vector3(0, yAxis, 0);
+		foreArms[0].transform.localEulerAngles = new Vector3(0, yAxis, 0);
 		transform.GetChild(1).GetChild(1).localEulerAngles = new Vector3(0, yAxis , 0);
+		foreArms[1].transform.localEulerAngles = new Vector3(0, -yAxis , 0);
 		yAxis = Mathf.Clamp(yAxis, -minClampGatlin, maxClampGatlin);
 
 	}
@@ -336,7 +350,9 @@ public class InputController : MonoBehaviour {
 			// rotation of the ship
 			var rotation= Quaternion.LookRotation(targetDir, Vector3.up);
 			transform.GetChild(1).GetChild(2).rotation = Quaternion.Slerp(transform.GetChild(1).GetChild(2).rotation, rotation, Time.deltaTime * rotRocketSpeed);
+			cannons[0].transform.rotation = transform.GetChild(1).GetChild(2).rotation;
 			transform.GetChild(1).GetChild(3).rotation = Quaternion.Slerp(transform.GetChild(1).GetChild(3).rotation, rotation, Time.deltaTime * rotRocketSpeed);
+			cannons[1].transform.rotation = transform.GetChild(1).GetChild(3).rotation;
 		}
 	}
 
