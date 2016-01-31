@@ -47,6 +47,8 @@ public class EnemyTank : MonoBehaviour {
 			this.transform.forward = -direction;
 		}
 
+		transform.position= new Vector3(transform.position.x, 6, transform.position.z);
+
 //		if (!arrived && endingPoint != null){
 //			transform.position = Vector3.MoveTowards(transform.position, endingPoint, Time.deltaTime * movingSpeed);
 //
@@ -74,10 +76,10 @@ public class EnemyTank : MonoBehaviour {
 		}
 	}
 
-	public void SetStartingPoint(Vector3 startingPoint)
-	{
-		startingPointV3 = startingPoint;
-	}
+//	public void SetStartingPoint(Vector3 startingPoint)
+//	{
+//		startingPointV3 = startingPoint;
+//	}
 
 //	public void SetVariables(Transform _begin, Transform _end)
 //	{

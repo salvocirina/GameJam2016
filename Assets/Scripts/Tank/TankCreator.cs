@@ -24,7 +24,7 @@ public class TankCreator : MonoBehaviour {
 //		{
 //			Vector3 direction = endingPosition.transform.position - startingPosition.transform.position;
 //			Vector3 opposite = new Vector3(direction.z, direction.y, direction.x).normalized;
-//			Vector3 diff = opposite * Random.Range(0.0f, xDiff);
+//			Vector3 diff = opposite * Random.Range(0.0f, xDiff);gds
 //
 //
 //			SpawnTank(diff);
@@ -36,8 +36,8 @@ public class TankCreator : MonoBehaviour {
 	{
 		if (tankPrefab != null)
 		{
-			GameObject tank = (GameObject) Instantiate(tankPrefab, startingPosition.transform.position, tankPrefab.transform.rotation) as GameObject;
-			tank.GetComponent<EnemyTank>().SetEndingPosition(endingPosition.transform.position);
+			GameObject tank = (GameObject) Instantiate(tankPrefab, endingPosition.transform.position, tankPrefab.transform.rotation) as GameObject;
+			//tank.GetComponent<EnemyTank>().SetEndingPosition(endingPosition.transform.position);
 		}
 	}
 }

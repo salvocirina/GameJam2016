@@ -295,7 +295,7 @@ public class InputController : MonoBehaviour {
 		
 		Destroy(rightBullet , 3.0f);
 
-		GameController.instance.energy -= 1.0f/gatlingShootingRate;
+		GameController.instance.energy -= 1.0f*gatlingShootingRate;
 	
 	}
 
@@ -309,7 +309,6 @@ public class InputController : MonoBehaviour {
 			
 			Destroy(leftBullet , 3.0f);
 
-			GameController.instance.energy -= 10.0f/gatlingShootingRate;
 
 		}
 
@@ -321,6 +320,8 @@ public class InputController : MonoBehaviour {
 			
 			Destroy(rightBullet , 3.0f);
 		}
+		GameController.instance.energy -= 10.0f*gatlingShootingRate;
+
 		
 	}
 
@@ -374,7 +375,7 @@ public class InputController : MonoBehaviour {
 
 		}
 
-		GameController.instance.energy -= 1.0f/rocketShootingRate;
+		GameController.instance.energy -= 1.0f*rocketShootingRate;
 
 	}
 
@@ -391,7 +392,7 @@ public class InputController : MonoBehaviour {
 		
 		}
 
-		GameController.instance.energy -= 10.0f/rocketShootingRate;
+		GameController.instance.energy -= 10.0f*rocketShootingRate;
 		
 	}
 
