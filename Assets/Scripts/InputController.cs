@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class InputController : MonoBehaviour {
@@ -82,7 +82,7 @@ public class InputController : MonoBehaviour {
 
 		isDead = false;
 
-		improvedrocketShootingRate = rocketShootingRate/2;
+		improvedrocketShootingRate = rocketShootingRate/3;
 
 		disable = false;
 
